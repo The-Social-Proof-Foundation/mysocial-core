@@ -1,7 +1,7 @@
 [package]
-name = "sui-protocol-config"
+name = "sui-protocol-config" # Kept for compatibility
 version = "0.1.0"
-authors = ["Mysten Labs <build@mystenlabs.com>"]
+authors = ["The Social Proof Foundation <brandon@socialproof.foundation>"]
 license = "Apache-2.0"
 publish = false
 edition = "2021"

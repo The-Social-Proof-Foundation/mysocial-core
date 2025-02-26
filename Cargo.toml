@@ -115,7 +115,9 @@ members = [
     "crates/sui-graphql-rpc-client",
     "crates/sui-graphql-rpc-headers",
     "crates/sui-http",
-    "crates/sui-indexer",
+    "crates/mysocial-indexer",
+    "crates/mysocial-protocol-config",
+    "crates/mysocial-protocol-config-macros",
     "crates/sui-indexer-alt",
     "crates/sui-indexer-alt-e2e-tests",
     "crates/sui-indexer-alt-framework",
@@ -179,7 +181,7 @@ members = [
     "crates/sui-transaction-builder",
     "crates/sui-transaction-checks",
     "crates/sui-transactional-test-runner",
-    "crates/sui-types",
+    "crates/mysocial-types",
     "crates/sui-upgrade-compatibility-transactional-tests",
     "crates/sui-verifier-transactional-tests",
     "crates/suins-indexer",
@@ -652,7 +654,7 @@ sui-graphql-rpc-client = { path = "crates/sui-graphql-rpc-client" }
 sui-graphql-rpc-headers = { path = "crates/sui-graphql-rpc-headers" }
 sui-genesis-builder = { path = "crates/sui-genesis-builder" }
 sui-http = { path = "crates/sui-http" }
-sui-indexer = { path = "crates/sui-indexer" }
+sui-indexer = { path = "crates/mysocial-indexer" }
 sui-indexer-alt = { path = "crates/sui-indexer-alt" }
 sui-indexer-alt-framework = { path = "crates/sui-indexer-alt-framework" }
 sui-indexer-alt-jsonrpc = { path = "crates/sui-indexer-alt-jsonrpc" }
@@ -683,7 +685,9 @@ sui-package-resolver = { path = "crates/sui-package-resolver" }
 sui-pg-db = { path = "crates/sui-pg-db" }
 sui-proc-macros = { path = "crates/sui-proc-macros" }
 sui-protocol-config = { path = "crates/sui-protocol-config" }
+mysocial-protocol-config = { path = "crates/mysocial-protocol-config" }
 sui-protocol-config-macros = { path = "crates/sui-protocol-config-macros" }
+mysocial-protocol-config-macros = { path = "crates/mysocial-protocol-config-macros" }
 sui-proxy = { path = "crates/sui-proxy" }
 sui-replay = { path = "crates/sui-replay" }
 sui-rosetta = { path = "crates/sui-rosetta" }
@@ -708,7 +712,7 @@ sui-tool = { path = "crates/sui-tool" }
 sui-transaction-builder = { path = "crates/sui-transaction-builder" }
 sui-transaction-checks = { path = "crates/sui-transaction-checks" }
 sui-transactional-test-runner = { path = "crates/sui-transactional-test-runner" }
-sui-types = { path = "crates/sui-types" }
+sui-types = { path = "crates/mysocial-types" }
 sui-upgrade-compatibility-transactional-tests = { path = "crates/sui-upgrade-compatibility-transactional-tests" }
 sui-verifier-transactional-tests = { path = "crates/sui-verifier-transactional-tests" }
 telemetry-subscribers = { path = "crates/telemetry-subscribers" }

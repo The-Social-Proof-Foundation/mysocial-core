@@ -1,4 +1,4 @@
-// Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation
 // SPDX-License-Identifier: Apache-2.0
 
 use mysten_metrics::RegistryService;
