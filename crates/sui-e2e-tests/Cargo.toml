@@ -43,6 +43,7 @@ fastcrypto-zkp.workspace = true
 move-core-types.workspace = true
 
 sui-core.workspace = true
+mysocial-core.workspace = true
 sui-framework.workspace = true
 sui-json-rpc.workspace = true
 sui-json-rpc-api.workspace = true
@@ -54,7 +55,9 @@ sui-storage.workspace = true
 mysten-metrics.workspace = true
 sui-tool.workspace = true
 sui-protocol-config.workspace = true
+mysocial-protocol-config.workspace = true
 sui-types.workspace = true
+mysocial-types.workspace = true
 sui-move-build.workspace = true
 sui-swarm-config.workspace = true
 sui-swarm.workspace = true

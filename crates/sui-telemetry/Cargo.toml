@@ -11,5 +11,6 @@ serde.workspace = true
 reqwest.workspace = true
 tracing.workspace = true
 
-sui-core.workspace = true
+mysocial-core.workspace = true
+sui-core.workspace = true # Keep for backward compatibility
 

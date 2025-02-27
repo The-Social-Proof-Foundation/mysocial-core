@@ -44,10 +44,12 @@ indicatif.workspace = true
 moka.workspace = true
 
 sui-types.workspace = true
+mysocial-types.workspace = true
 mysten-metrics.workspace = true
 move-core-types.workspace = true
 sui-json-rpc-types.workspace = true
 sui-protocol-config.workspace = true
+mysocial-protocol-config.workspace = true
 sui-config.workspace = true
 typed-store.workspace = true
 eyre.workspace = true

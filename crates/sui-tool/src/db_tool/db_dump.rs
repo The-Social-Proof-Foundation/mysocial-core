@@ -12,17 +12,17 @@ use std::sync::Arc;
 use strum_macros::EnumString;
 use sui_archival::reader::ArchiveReaderBalancer;
 use sui_config::node::AuthorityStorePruningConfig;
-use sui_core::authority::authority_per_epoch_store::AuthorityEpochTables;
-use sui_core::authority::authority_store_pruner::{
+use mysocial_core::authority::authority_per_epoch_store::AuthorityEpochTables;
+use mysocial_core::authority::authority_store_pruner::{
     AuthorityStorePruner, AuthorityStorePruningMetrics, EPOCH_DURATION_MS_FOR_TESTING,
 };
-use sui_core::authority::authority_store_tables::AuthorityPerpetualTables;
-use sui_core::authority::authority_store_types::{StoreData, StoreObject};
-use sui_core::checkpoints::CheckpointStore;
-use sui_core::epoch::committee_store::CommitteeStoreTables;
-use sui_core::jsonrpc_index::IndexStoreTables;
-use sui_core::rpc_index::RpcIndexStore;
-use sui_types::base_types::{EpochId, ObjectID};
+use mysocial_core::authority::authority_store_tables::AuthorityPerpetualTables;
+use mysocial_core::authority::authority_store_types::{StoreData, StoreObject};
+use mysocial_core::checkpoints::CheckpointStore;
+use mysocial_core::epoch::committee_store::CommitteeStoreTables;
+use mysocial_core::jsonrpc_index::IndexStoreTables;
+use mysocial_core::rpc_index::RpcIndexStore;
+use mysocial_types::base_types::{EpochId, ObjectID};
 use tracing::info;
 use typed_store::rocks::{default_db_options, MetricConf};
 use typed_store::rocksdb::MultiThreaded;

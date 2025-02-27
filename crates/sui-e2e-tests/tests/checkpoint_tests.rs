@@ -48,7 +48,7 @@ async fn test_checkpoint_split_brain() {
     {
         // this test intentionally halts the network by causing a fork, so we cannot panic on
         // loss of liveness
-        use sui_core::authority::{init_checkpoint_timeout_config, CheckpointTimeoutConfig};
+        use mysocial_core::authority::{init_checkpoint_timeout_config, CheckpointTimeoutConfig};
         init_checkpoint_timeout_config(CheckpointTimeoutConfig {
             warning_timeout: Duration::from_secs(2),
             panic_timeout: None,

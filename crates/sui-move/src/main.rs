@@ -7,7 +7,7 @@ use clap::*;
 use colored::Colorize;
 use move_package::BuildConfig as MoveBuildConfig;
 use sui_move::execute_move_command;
-use sui_types::exit_main;
+use mysocial_types::exit_main;
 use tracing::debug;
 
 // Define the `GIT_REVISION` and `VERSION` consts

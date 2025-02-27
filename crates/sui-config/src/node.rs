@@ -21,25 +21,25 @@ use std::path::{Path, PathBuf};
 use std::sync::Arc;
 use std::time::Duration;
 use sui_keys::keypair_file::{read_authority_keypair_from_file, read_keypair_from_file};
-use sui_types::base_types::{ObjectID, SuiAddress};
-use sui_types::committee::EpochId;
-use sui_types::crypto::AuthorityPublicKeyBytes;
-use sui_types::crypto::KeypairTraits;
-use sui_types::crypto::NetworkKeyPair;
-use sui_types::crypto::SuiKeyPair;
-use sui_types::messages_checkpoint::CheckpointSequenceNumber;
-use sui_types::supported_protocol_versions::{Chain, SupportedProtocolVersions};
-use sui_types::traffic_control::{PolicyConfig, RemoteFirewallConfig};
+use mysocial_types::base_types::{ObjectID, SuiAddress};
+use mysocial_types::committee::EpochId;
+use mysocial_types::crypto::AuthorityPublicKeyBytes;
+use mysocial_types::crypto::KeypairTraits;
+use mysocial_types::crypto::NetworkKeyPair;
+use mysocial_types::crypto::SuiKeyPair;
+use mysocial_types::messages_checkpoint::CheckpointSequenceNumber;
+use mysocial_types::supported_protocol_versions::{Chain, SupportedProtocolVersions};
+use mysocial_types::traffic_control::{PolicyConfig, RemoteFirewallConfig};
 
-use sui_types::crypto::{get_key_pair_from_rng, AccountKeyPair, AuthorityKeyPair};
-use sui_types::multiaddr::Multiaddr;
+use mysocial_types::crypto::{get_key_pair_from_rng, AccountKeyPair, AuthorityKeyPair};
+use mysocial_types::multiaddr::Multiaddr;
 use tracing::{error, info};
 
 // Default max number of concurrent requests served
 pub const DEFAULT_GRPC_CONCURRENCY_LIMIT: usize = 20000000000;
 
 /// Default gas price of 100 Mist
-pub const DEFAULT_VALIDATOR_GAS_PRICE: u64 = sui_types::transaction::DEFAULT_VALIDATOR_GAS_PRICE;
+pub const DEFAULT_VALIDATOR_GAS_PRICE: u64 = mysocial_types::transaction::DEFAULT_VALIDATOR_GAS_PRICE;
 
 /// Default commission rate of 2%
 pub const DEFAULT_COMMISSION_RATE: u64 = 200;

@@ -32,15 +32,15 @@ use sui_json_rpc_types::{
     SuiTransactionBlockResponseOptions, SuiTransactionBlockResponseQuery, TransactionBlocksPage,
     TransactionFilter,
 };
-use sui_types::balance::Supply;
-use sui_types::base_types::{ObjectID, SequenceNumber, SuiAddress, TransactionDigest};
-use sui_types::dynamic_field::DynamicFieldName;
-use sui_types::event::EventID;
-use sui_types::messages_checkpoint::CheckpointSequenceNumber;
-use sui_types::quorum_driver_types::ExecuteTransactionRequestType;
-use sui_types::sui_serde::BigInt;
-use sui_types::sui_system_state::sui_system_state_summary::SuiSystemStateSummary;
-use sui_types::transaction::{Transaction, TransactionData, TransactionKind};
+use mysocial_types::balance::Supply;
+use mysocial_types::base_types::{ObjectID, SequenceNumber, SuiAddress, TransactionDigest};
+use mysocial_types::dynamic_field::DynamicFieldName;
+use mysocial_types::event::EventID;
+use mysocial_types::messages_checkpoint::CheckpointSequenceNumber;
+use mysocial_types::quorum_driver_types::ExecuteTransactionRequestType;
+use mysocial_types::sui_serde::BigInt;
+use mysocial_types::sui_system_state::sui_system_state_summary::SuiSystemStateSummary;
+use mysocial_types::transaction::{Transaction, TransactionData, TransactionKind};
 
 const WAIT_FOR_LOCAL_EXECUTION_TIMEOUT: Duration = Duration::from_secs(60);
 const WAIT_FOR_LOCAL_EXECUTION_DELAY: Duration = Duration::from_millis(200);

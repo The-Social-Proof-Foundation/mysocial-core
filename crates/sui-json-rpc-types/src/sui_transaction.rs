@@ -21,36 +21,36 @@ use move_core_types::identifier::{IdentStr, Identifier};
 use move_core_types::language_storage::{ModuleId, StructTag, TypeTag};
 use mysten_metrics::monitored_scope;
 use sui_json::{primitive_type, SuiJsonValue};
-use sui_types::authenticator_state::ActiveJwk;
-use sui_types::base_types::{
+use mysocial_types::authenticator_state::ActiveJwk;
+use mysocial_types::base_types::{
     EpochId, ObjectID, ObjectRef, SequenceNumber, SuiAddress, TransactionDigest,
 };
-use sui_types::crypto::SuiSignature;
-use sui_types::digests::{
+use mysocial_types::crypto::SuiSignature;
+use mysocial_types::digests::{
     CheckpointDigest, ConsensusCommitDigest, ObjectDigest, TransactionEventsDigest,
 };
-use sui_types::effects::{TransactionEffects, TransactionEffectsAPI, TransactionEvents};
-use sui_types::error::{ExecutionError, SuiError, SuiResult};
-use sui_types::execution_status::ExecutionStatus;
-use sui_types::gas::GasCostSummary;
-use sui_types::layout_resolver::{get_layout_from_struct_tag, LayoutResolver};
-use sui_types::messages_checkpoint::CheckpointSequenceNumber;
-use sui_types::messages_consensus::ConsensusDeterminedVersionAssignments;
-use sui_types::object::Owner;
-use sui_types::parse_sui_type_tag;
-use sui_types::quorum_driver_types::ExecuteTransactionRequestType;
-use sui_types::signature::GenericSignature;
-use sui_types::storage::{DeleteKind, WriteKind};
-use sui_types::sui_serde::Readable;
-use sui_types::sui_serde::{
+use mysocial_types::effects::{TransactionEffects, TransactionEffectsAPI, TransactionEvents};
+use mysocial_types::error::{ExecutionError, SuiError, SuiResult};
+use mysocial_types::execution_status::ExecutionStatus;
+use mysocial_types::gas::GasCostSummary;
+use mysocial_types::layout_resolver::{get_layout_from_struct_tag, LayoutResolver};
+use mysocial_types::messages_checkpoint::CheckpointSequenceNumber;
+use mysocial_types::messages_consensus::ConsensusDeterminedVersionAssignments;
+use mysocial_types::object::Owner;
+use mysocial_types::parse_sui_type_tag;
+use mysocial_types::quorum_driver_types::ExecuteTransactionRequestType;
+use mysocial_types::signature::GenericSignature;
+use mysocial_types::storage::{DeleteKind, WriteKind};
+use mysocial_types::sui_serde::Readable;
+use mysocial_types::sui_serde::{
     BigInt, SequenceNumber as AsSequenceNumber, SuiTypeTag as AsSuiTypeTag,
 };
-use sui_types::transaction::{
+use mysocial_types::transaction::{
     Argument, CallArg, ChangeEpoch, Command, EndOfEpochTransactionKind, GenesisObject,
     InputObjectKind, ObjectArg, ProgrammableMoveCall, ProgrammableTransaction, SenderSignedData,
     TransactionData, TransactionDataAPI, TransactionKind,
 };
-use sui_types::SUI_FRAMEWORK_ADDRESS;
+use mysocial_types::MYSO_FRAMEWORK_ADDRESS as SUI_FRAMEWORK_ADDRESS;
 
 use crate::balance_changes::BalanceChange;
 use crate::object_changes::ObjectChange;

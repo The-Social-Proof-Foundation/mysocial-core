@@ -95,7 +95,8 @@ use sui_json_rpc_types::{
 };
 use sui_transaction_builder::{DataReader, TransactionBuilder};
 pub use sui_types as types;
-use sui_types::base_types::{ObjectID, ObjectInfo, SuiAddress};
+pub use mysocial_types as mysocial_types;
+use mysocial_types::base_types::{ObjectID, ObjectInfo, SuiAddress};
 
 use crate::apis::{CoinReadApi, EventApi, GovernanceApi, QuorumDriverApi, ReadApi};
 use crate::error::{Error, SuiRpcResult};

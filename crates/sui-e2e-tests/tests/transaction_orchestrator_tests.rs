@@ -3,8 +3,8 @@
 
 use std::sync::Arc;
 use std::time::Duration;
-use sui_core::authority_client::NetworkAuthorityClient;
-use sui_core::transaction_orchestrator::TransactiondOrchestrator;
+use mysocial_core::authority_client::NetworkAuthorityClient;
+use mysocial_core::transaction_orchestrator::TransactiondOrchestrator;
 use sui_macros::sim_test;
 use sui_storage::key_value_store::TransactionKeyValueStore;
 use sui_storage::key_value_store_metrics::KeyValueStoreMetrics;

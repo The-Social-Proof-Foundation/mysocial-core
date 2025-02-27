@@ -10,9 +10,9 @@ use anyhow::{Error, Result};
 use itertools::Itertools;
 use std::collections::{HashMap, VecDeque};
 use std::sync::Arc;
-use sui_core::test_utils::{make_pay_sui_transaction, make_transfer_sui_transaction};
-use sui_types::base_types::SuiAddress;
-use sui_types::crypto::AccountKeyPair;
+use mysocial_core::test_utils::{make_pay_sui_transaction, make_transfer_sui_transaction};
+use mysocial_types::base_types::SuiAddress;
+use mysocial_types::crypto::AccountKeyPair;
 use tracing::info;
 
 /// Bank is used for generating gas for running the benchmark.

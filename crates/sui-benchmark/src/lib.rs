@@ -8,7 +8,7 @@ use prometheus::Registry;
 use rand::Rng;
 use std::{collections::BTreeMap, sync::Arc, time::Duration};
 use sui_config::genesis::Genesis;
-use sui_core::{
+use mysocial_core::{
     authority_aggregator::{AuthorityAggregator, AuthorityAggregatorBuilder},
     authority_client::NetworkAuthorityClient,
     quorum_driver::{
@@ -21,24 +21,24 @@ use sui_json_rpc_types::{
     SuiTransactionBlockEffectsAPI, SuiTransactionBlockResponseOptions,
 };
 use sui_sdk::{SuiClient, SuiClientBuilder};
-use sui_types::effects::{TransactionEffectsAPI, TransactionEvents};
-use sui_types::gas::GasCostSummary;
-use sui_types::programmable_transaction_builder::ProgrammableTransactionBuilder;
-use sui_types::quorum_driver_types::EffectsFinalityInfo;
-use sui_types::quorum_driver_types::FinalizedEffects;
-use sui_types::sui_system_state::sui_system_state_summary::SuiSystemStateSummary;
-use sui_types::transaction::Argument;
-use sui_types::transaction::CallArg;
-use sui_types::transaction::ObjectArg;
-use sui_types::{
+use mysocial_types::effects::{TransactionEffectsAPI, TransactionEvents};
+use mysocial_types::gas::GasCostSummary;
+use mysocial_types::programmable_transaction_builder::ProgrammableTransactionBuilder;
+use mysocial_types::quorum_driver_types::EffectsFinalityInfo;
+use mysocial_types::quorum_driver_types::FinalizedEffects;
+use mysocial_types::sui_system_state::sui_system_state_summary::SuiSystemStateSummary;
+use mysocial_types::transaction::Argument;
+use mysocial_types::transaction::CallArg;
+use mysocial_types::transaction::ObjectArg;
+use mysocial_types::{
     base_types::ObjectID,
     committee::{Committee, EpochId},
     object::Object,
     transaction::Transaction,
 };
-use sui_types::{base_types::ObjectRef, crypto::AuthorityStrongQuorumSignInfo, object::Owner};
-use sui_types::{base_types::SequenceNumber, gas_coin::GasCoin};
-use sui_types::{
+use mysocial_types::{base_types::ObjectRef, crypto::AuthorityStrongQuorumSignInfo, object::Owner};
+use mysocial_types::{base_types::SequenceNumber, gas_coin::GasCoin};
+use mysocial_types::{
     base_types::{AuthorityName, SuiAddress},
     sui_system_state::SuiSystemStateTrait,
 };

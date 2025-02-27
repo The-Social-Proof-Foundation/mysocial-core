@@ -30,21 +30,21 @@ use std::{
     sync::Mutex,
 };
 use sui_config::node::ExpensiveSafetyCheckConfig;
-use sui_core::authority::NodeStateDump;
+use mysocial_core::authority::NodeStateDump;
 use sui_execution::Executor;
 use sui_framework::BuiltInFramework;
 use sui_json_rpc_types::{
     SuiExecutionStatus, SuiTransactionBlockEffects, SuiTransactionBlockEffectsAPI,
 };
-use sui_protocol_config::{Chain, ProtocolConfig};
+use mysocial_protocol_config::{Chain, ProtocolConfig};
 use sui_sdk::{SuiClient, SuiClientBuilder};
-use sui_types::in_memory_storage::InMemoryStorage;
-use sui_types::message_envelope::Message;
-use sui_types::storage::{get_module, PackageObject};
-use sui_types::transaction::GasData;
-use sui_types::transaction::TransactionKind::ProgrammableTransaction;
-use sui_types::SUI_DENY_LIST_OBJECT_ID;
-use sui_types::{
+use mysocial_types::in_memory_storage::InMemoryStorage;
+use mysocial_types::message_envelope::Message;
+use mysocial_types::storage::{get_module, PackageObject};
+use mysocial_types::transaction::GasData;
+use mysocial_types::transaction::TransactionKind::ProgrammableTransaction;
+use mysocial_types::SUI_DENY_LIST_OBJECT_ID;
+use mysocial_types::{
     base_types::{ObjectID, ObjectRef, SequenceNumber, VersionNumber},
     committee::EpochId,
     digests::{ObjectDigest, TransactionDigest},
@@ -969,7 +969,7 @@ impl LocalExec {
     }
 
     /// Must be called after `init_for_execution`
-    /// This executes from `sui_core::authority::AuthorityState::try_execute_immediately`
+    /// This executes from `mysocial_core::authority::AuthorityState::try_execute_immediately`
     pub async fn certificate_execute(
         &mut self,
         tx_digest: &TransactionDigest,

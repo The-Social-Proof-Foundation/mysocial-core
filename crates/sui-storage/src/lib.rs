@@ -19,11 +19,11 @@ use std::path::{Path, PathBuf};
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::Arc;
 use std::{fs, io};
-use sui_types::committee::Committee;
-use sui_types::messages_checkpoint::{
+use mysocial_types::committee::Committee;
+use mysocial_types::messages_checkpoint::{
     CertifiedCheckpointSummary, CheckpointSequenceNumber, VerifiedCheckpoint,
 };
-use sui_types::storage::WriteStore;
+use mysocial_types::storage::WriteStore;
 use tracing::debug;
 
 pub mod blob;

@@ -17,9 +17,9 @@ use std::fs;
 use std::fs::File;
 use std::io::BufReader;
 use std::path::{Path, PathBuf};
-use sui_types::base_types::SuiAddress;
-use sui_types::crypto::get_key_pair_from_rng;
-use sui_types::crypto::{
+use mysocial_types::base_types::SuiAddress;
+use mysocial_types::crypto::get_key_pair_from_rng;
+use mysocial_types::crypto::{
     enum_dispatch, EncodeDecodeBase64, PublicKey, Signature, SignatureScheme, SuiKeyPair,
 };
 

@@ -20,6 +20,7 @@ pub use mysten_network;
 pub use sui_framework;
 pub use sui_move_build;
 pub use sui_types;
+pub use mysocial_types;
 pub use telemetry_subscribers;
 pub use tempfile;
 pub use tower;

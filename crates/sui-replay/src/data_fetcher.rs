@@ -12,7 +12,7 @@ use rand::Rng;
 use std::collections::BTreeMap;
 use std::num::NonZeroUsize;
 use std::str::FromStr;
-use sui_core::authority::NodeStateDump;
+use mysocial_core::authority::NodeStateDump;
 use sui_json_rpc_api::QUERY_MAX_RESULT_LIMIT;
 use sui_json_rpc_types::EventFilter;
 use sui_json_rpc_types::SuiEvent;
@@ -24,12 +24,12 @@ use sui_json_rpc_types::SuiPastObjectResponse;
 use sui_json_rpc_types::SuiTransactionBlockResponse;
 use sui_json_rpc_types::SuiTransactionBlockResponseOptions;
 use sui_sdk::SuiClient;
-use sui_types::base_types::{ObjectID, SequenceNumber, VersionNumber};
-use sui_types::digests::TransactionDigest;
-use sui_types::object::Object;
-use sui_types::transaction::SenderSignedData;
-use sui_types::transaction::TransactionDataAPI;
-use sui_types::transaction::{EndOfEpochTransactionKind, TransactionKind};
+use mysocial_types::base_types::{ObjectID, SequenceNumber, VersionNumber};
+use mysocial_types::digests::TransactionDigest;
+use mysocial_types::object::Object;
+use mysocial_types::transaction::SenderSignedData;
+use mysocial_types::transaction::TransactionDataAPI;
+use mysocial_types::transaction::{EndOfEpochTransactionKind, TransactionKind};
 
 /// This trait defines the interfaces for fetching data from some local or remote store
 #[async_trait]

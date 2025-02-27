@@ -11,7 +11,7 @@ use move_package::{
     source_package::layout::SourcePackageLayout,
     BuildConfig,
 };
-use sui_types::base_types::ObjectID;
+use mysocial_types::base_types::ObjectID;
 
 const NO_LOCK_FILE: &str = "Expected a `Move.lock` file to exist in the package path, \
                             but none found. Consider running `sui move build` to \

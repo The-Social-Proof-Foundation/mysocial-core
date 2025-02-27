@@ -20,7 +20,7 @@ pub mod transaction_deny_config;
 pub mod verifier_signing_config;
 
 pub use node::{ConsensusConfig, ExecutionCacheConfig, NodeConfig};
-use sui_types::multiaddr::Multiaddr;
+use mysocial_types::multiaddr::Multiaddr;
 
 const SUI_DIR: &str = ".sui";
 pub const SUI_CONFIG_DIR: &str = "sui_config";

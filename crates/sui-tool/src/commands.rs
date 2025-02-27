@@ -14,13 +14,13 @@ use futures::{future::join_all, StreamExt};
 use std::path::PathBuf;
 use std::{collections::BTreeMap, env, sync::Arc};
 use sui_config::genesis::Genesis;
-use sui_core::authority_client::AuthorityAPI;
-use sui_protocol_config::Chain;
+use mysocial_core::authority_client::AuthorityAPI;
+use mysocial_protocol_config::Chain;
 use sui_replay::{execute_replay_command, ReplayToolCommand};
 use sui_sdk::{rpc_types::SuiTransactionBlockResponseOptions, SuiClient, SuiClientBuilder};
 use telemetry_subscribers::TracingHandle;
 
-use sui_types::{
+use mysocial_types::{
     base_types::*, crypto::AuthorityPublicKeyBytes, messages_grpc::TransactionInfoRequest,
 };
 

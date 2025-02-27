@@ -95,6 +95,7 @@ members = [
     "crates/sui-cluster-test",
     "crates/sui-config",
     "crates/sui-core",
+    "crates/mysocial-core",
     "crates/sui-cost",
     "crates/sui-data-ingestion",
     "crates/sui-data-ingestion-core",
@@ -637,6 +638,7 @@ sui-bridge = { path = "crates/sui-bridge" }
 sui-cluster-test = { path = "crates/sui-cluster-test" }
 sui-config = { path = "crates/sui-config" }
 sui-core = { path = "crates/sui-core" }
+mysocial-core = { path = "crates/mysocial-core" }
 sui-cost = { path = "crates/sui-cost" }
 sui-data-ingestion = { path = "crates/sui-data-ingestion" }
 sui-data-ingestion-core = { path = "crates/sui-data-ingestion-core" }
@@ -713,6 +715,7 @@ sui-transaction-builder = { path = "crates/sui-transaction-builder" }
 sui-transaction-checks = { path = "crates/sui-transaction-checks" }
 sui-transactional-test-runner = { path = "crates/sui-transactional-test-runner" }
 sui-types = { path = "crates/mysocial-types" }
+mysocial-types = { path = "crates/mysocial-types" }
 sui-upgrade-compatibility-transactional-tests = { path = "crates/sui-upgrade-compatibility-transactional-tests" }
 sui-verifier-transactional-tests = { path = "crates/sui-verifier-transactional-tests" }
 telemetry-subscribers = { path = "crates/telemetry-subscribers" }

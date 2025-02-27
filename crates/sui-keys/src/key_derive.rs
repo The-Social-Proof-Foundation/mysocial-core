@@ -13,7 +13,7 @@ use fastcrypto::{
     traits::{KeyPair, ToFromBytes},
 };
 use slip10_ed25519::derive_ed25519_private_key;
-use sui_types::{
+use mysocial_types::{
     base_types::SuiAddress,
     crypto::{SignatureScheme, SuiKeyPair},
     error::SuiError,

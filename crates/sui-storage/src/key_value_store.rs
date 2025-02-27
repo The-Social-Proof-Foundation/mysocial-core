@@ -8,15 +8,15 @@ use crate::key_value_store_metrics::KeyValueStoreMetrics;
 use async_trait::async_trait;
 use std::sync::Arc;
 use std::time::Instant;
-use sui_types::base_types::{ObjectID, SequenceNumber, VersionNumber};
-use sui_types::digests::{CheckpointDigest, TransactionDigest};
-use sui_types::effects::{TransactionEffects, TransactionEvents};
-use sui_types::error::{SuiError, SuiResult, UserInputError};
-use sui_types::messages_checkpoint::{
+use mysocial_types::base_types::{ObjectID, SequenceNumber, VersionNumber};
+use mysocial_types::digests::{CheckpointDigest, TransactionDigest};
+use mysocial_types::effects::{TransactionEffects, TransactionEvents};
+use mysocial_types::error::{SuiError, SuiResult, UserInputError};
+use mysocial_types::messages_checkpoint::{
     CertifiedCheckpointSummary, CheckpointContents, CheckpointSequenceNumber,
 };
-use sui_types::object::Object;
-use sui_types::transaction::Transaction;
+use mysocial_types::object::Object;
+use mysocial_types::transaction::Transaction;
 use tracing::instrument;
 
 pub type KVStoreTransactionData = (Vec<Option<Transaction>>, Vec<Option<TransactionEffects>>);
