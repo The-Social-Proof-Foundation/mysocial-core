@@ -1,5 +1,6 @@
 // Copyright (c) The Social Proof Foundation
 // SPDX-License-Identifier: Apache-2.0
+
 #![warn(
     future_incompatible,
     nonstandard_style,
@@ -85,6 +86,12 @@ pub mod mysocial_system_state;
 pub use mysocial_sdk_types_conversions as sui_sdk_types_conversions;
 pub use mysocial_serde as sui_serde;
 pub use mysocial_system_state as sui_system_state;
+
+// Create a namespace alias for the whole crate for backward compatibility
+#[allow(deprecated)]
+pub mod sui_types {
+    pub use super::*;
+}
 
 // Backward compatibility aliases for constants
 pub use crate::MYSO_FRAMEWORK_ADDRESS as SUI_FRAMEWORK_ADDRESS;

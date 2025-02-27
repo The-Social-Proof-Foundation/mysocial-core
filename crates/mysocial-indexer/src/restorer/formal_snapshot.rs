@@ -1,4 +1,4 @@
-// Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation
 // SPDX-License-Identifier: Apache-2.0
 
 use std::collections::BTreeMap;
@@ -14,7 +14,8 @@ use tokio::task;
 use tracing::info;
 
 use sui_config::object_storage_config::{ObjectStoreConfig, ObjectStoreType};
-use sui_core::authority::authority_store_tables::LiveObject;
+// Always use LiveObject from mysocial-core, since the feature is now enabled by default
+use mysocial_core::authority::authority_store_tables::LiveObject;
 use sui_snapshot::reader::{download_bytes, LiveObjectIter, StateSnapshotReaderV1};
 use sui_snapshot::FileMetadata;
 use sui_storage::object_store::util::get;

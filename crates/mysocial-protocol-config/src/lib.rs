@@ -16,6 +16,16 @@ use mysocial_protocol_config_macros::{
 };
 use tracing::{info, warn};
 
+// Create compatibility layer for sui-protocol-config
+// This is a public re-export of the entire module to support legacy imports
+#[allow(deprecated)]
+pub mod sui_protocol_config {
+    pub use super::*;
+}
+
+// Also create a public alias for protocol-config for backward compatibility
+pub use mysocial_protocol_config as protocol_config;
+
 /// The minimum and maximum protocol versions supported by this build.
 const MIN_PROTOCOL_VERSION: u64 = 1;
 const MAX_PROTOCOL_VERSION: u64 = 75;

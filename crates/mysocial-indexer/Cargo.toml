@@ -1,7 +1,7 @@
 [package]
 name = "sui-indexer" # Temporarily keeping original name for dependencies to work
 version.workspace = true
-authors = ["Mysten Labs <build@mystenlabs.com>"]
+authors = ["The Social Proof Foundation <brandon@socialproof.foundation>"]
 license = "Apache-2.0"
 publish = false
 edition = "2021"
@@ -48,7 +48,8 @@ mysten-metrics.workspace = true
 simulacrum.workspace = true
 sui-config.workspace = true
 sui-archival.workspace = true
-sui-core.workspace = true
+sui-core.workspace = true # Keep for backward compatibility
+mysocial-core.workspace = true
 sui-data-ingestion-core.workspace = true
 sui-json.workspace = true
 sui-json-rpc.workspace = true
@@ -61,8 +62,10 @@ sui-sdk.workspace = true
 sui-snapshot.workspace = true
 sui-storage.workspace = true
 sui-types.workspace = true
+mysocial-types.workspace = true
 sui-package-resolver.workspace = true
 sui-protocol-config.workspace = true
+mysocial-protocol-config.workspace = true
 telemetry-subscribers.workspace = true
 sui-rpc-api.workspace = true
 sui-transaction-builder.workspace = true
@@ -86,6 +89,14 @@ test-cluster.workspace = true
 ntest.workspace = true
 criterion.workspace = true
 
+[features]
+default = ["use-mysocial-core"]  # Default to using mysocial-core
+use-mysocial-core = []  # Feature flag to use mysocial-core instead of sui-core
+
 [[bin]]
-name = "sui-indexer" # Temporarily keeping original name for dependencies to work
+name = "mysocial-indexer" # Updated binary name
+path = "src/main.rs"
+
+[[bin]]
+name = "sui-indexer" # Also keep old name for backward compatibility
 path = "src/main.rs"
