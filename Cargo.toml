@@ -98,6 +98,8 @@ members = [
     "crates/mysocial-core",
     "crates/mysocial-config",
     "crates/mysocial-json",
+    "crates/mysocial-json-rpc-api",
+    "crates/mysocial-name-service",
     "crates/sui-cost",
     "crates/sui-data-ingestion",
     "crates/sui-data-ingestion-core",
@@ -668,6 +670,7 @@ sui-indexer-builder = { path = "crates/sui-indexer-builder" }
 sui-json = { path = "crates/sui-json" }
 sui-json-rpc = { path = "crates/sui-json-rpc" }
 sui-json-rpc-api = { path = "crates/sui-json-rpc-api" }
+mysocial-json-rpc-api = { path = "crates/mysocial-json-rpc-api" }
 sui-json-rpc-types = { path = "crates/sui-json-rpc-types" }
 sui-keys = { path = "crates/sui-keys" }
 sui-kvstore = {path = "crates/sui-kvstore"}
@@ -678,6 +681,7 @@ sui-move-build = { path = "crates/sui-move-build" }
 sui-move-lsp = { path = "crates/sui-move-lsp" }
 # sui-mvr-graphql-rpc removed
 sui-name-service = { path = "crates/sui-name-service" }
+mysocial-name-service = { path = "crates/mysocial-name-service" }
 sui-network = { path = "crates/sui-network" }
 sui-node = { path = "crates/sui-node" }
 sui-open-rpc = { path = "crates/sui-open-rpc" }

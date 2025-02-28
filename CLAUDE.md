@@ -31,6 +31,10 @@ We've made significant progress in implementing the MySocial rebranding across s
   - Implemented dual-crate strategy with conditional imports
   - Created equivalents for all core modules: discovery, randomness, and state_sync
   - Used feature flags to control which implementation is used
+- **sui-genesis-builder**: Created mysocial-genesis-builder crate with feature flags for conditional imports
+  - Implemented conditional dependency selection based on use-mysocial feature
+  - Added compatibility layer for both mysocial and sui module imports
+  - Created parallel structure mirroring the original crate with proper namespacing
 
 ### Enhanced alias.rs Module
 We've expanded the alias.rs module in mysocial-core to handle more commonly used types:
@@ -217,6 +221,19 @@ During our rebranding effort, we've identified several challenges and developed 
   4. Use `package = "old-name"` syntax to resolve name conflicts
   5. Test the crate in isolation before integrating
 
+### Challenge: Build Failures During Migration
+- **Problem**: Individual crates cannot be built successfully until the full project migration is complete due to interdependencies
+- **Solution**: 
+  1. Do NOT attempt to build individual crates with `cargo build -p <crate-name>` during the migration
+  2. Focus on making code changes consistently across related crates 
+  3. Only attempt full project builds after significant milestone completions
+  4. Use the feature-flag approach to maintain compatibility during the transition
+- **Approach**:
+  1. Make source code changes systematically following the rename patterns
+  2. Track progress in migration_priorities.json and migration_report.txt
+  3. Rely on the isolated testing script rather than direct cargo builds
+  4. Complete migration of all related crates before attempting to build any individual crate
+
 ### Challenge: Package Name Conflicts
 - **Problem**: Both mysocial-core and sui-core have the package name "sui-core" in Cargo.toml, causing conflicts in workspace
 - **Solutions**:
@@ -264,8 +281,16 @@ We've made significant progress in our migration efforts, including:
    - Added version mapping for common dependencies (syn, proc-macro2, etc.)
    - Implemented handling for workspace version references
    - Added support for maintaining dual dependencies during transition
+   
+2. **Testing Feature-Flag Based Crates**:
+   - When using the feature-flag approach for migration, we need special testing consideration
+   - Unit tests need to be conditional on the feature flag (using #[cfg(feature = "use-mysocial")])
+   - Integration tests can be run with `--features use-mysocial` to test the mysocial implementation
+   - Tests need to be written to handle both implementations correctly
+   - Direct path dependencies are better than workspace references for testing during development
 
-2. **Successfully Migrated Crates**:
+3. **Successfully Migrated Crates**:
+   - **mysocial-genesis-builder**: Created new crate with feature-flag based approach for migration
    - **sui-archival**: Migrated to use mysocial-types and mysocial-config for archive functionality
    - **sui-analytics-indexer**: Updated to use mysocial-types for analytics processing
    - **sui-authority-aggregation**: Successfully migrated to use mysocial-types
@@ -277,10 +302,15 @@ We've made significant progress in our migration efforts, including:
 
 ## Next Steps
 1. Continue renaming remaining high-priority modules:
+   - **sui-name-service**: Update to use mysocial-types and dependencies
+   - **sui-json-rpc-api**: Update to use mysocial-types for API definitions
+   - **sui-graphql-rpc**: Update to use mysocial-types for GraphQL schema
+   - **sui-rpc-api**: Update to use mysocial-types for RPC API definitions
+
+2. Complete existing partially migrated modules:
+   - **sui-network**: Complete migration with tests and remaining components
    - **sui-json-rpc-tests**: Update to use mysocial-core and mysocial-types for testing infrastructure
    - **sui-transactional-test-runner**: Fully migrate to use mysocial-core and types
-   - **sui-genesis-builder**: Update to use mysocial-types and mysocial-core
-   - **sui-name-service**: Update to use mysocial-types and dependencies
 
 2. Enhance testing infrastructure:
    - Improve test_isolated_migration.sh to handle complex dependencies like fastcrypto

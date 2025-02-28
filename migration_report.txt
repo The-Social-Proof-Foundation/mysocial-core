@@ -1,12 +1,18 @@
 ===== MYSOCIAL MIGRATION STATUS =====
 
-FULLY MIGRATED CRATES (30):
+FULLY MIGRATED CRATES (36):
   - mysocial-config
   - mysocial-core
+  - mysocial-genesis-builder
   - mysocial-indexer
   - mysocial-json
+  - mysocial-json-rpc-api
+  - mysocial-name-service
+  - mysocial-network
   - mysocial-protocol-config
   - mysocial-types
+  - sui-analytics-indexer
+  - sui-archival
   - sui-authority-aggregation
   - sui-cluster-test
   - sui-config
@@ -33,24 +39,24 @@ FULLY MIGRATED CRATES (30):
   - transaction-fuzzer
 
 PARTIALLY MIGRATED CRATES (16):
-  - sui-archival
-  - sui-analytics-indexer
-  - sui-analytics-indexer-derive
-  - sui-authority-aggregation
   - sui
+  - sui-adapter-transactional-tests
+  - sui-analytics-indexer-derive
   - sui-benchmark
   - sui-core
-  - sui-indexer-alt
+  - sui-genesis-builder
+  - sui-graphql-rpc
   - sui-json-rpc
   - sui-json-rpc-tests
   - sui-network
   - sui-node
   - sui-snapshot
+  - sui-swarm
   - sui-tool
   - sui-transactional-test-runner
   - x
 
-NOT MIGRATED CRATES (83):
+NOT MIGRATED CRATES (75):
   - anemo-benchmark
   - bin-version
   - mysocial-protocol-config-macros
@@ -63,7 +69,6 @@ NOT MIGRATED CRATES (83):
   - prometheus-closure-metric
   - shared-crypto
   - simulacrum
-  - sui-adapter-transactional-tests
   - sui-aws-orchestrator
   - sui-bridge
   - sui-bridge-cli
@@ -81,33 +86,28 @@ NOT MIGRATED CRATES (83):
   - sui-field-count-derive
   - sui-framework-snapshot
   - sui-framework-tests
-  - sui-genesis-builder
   - sui-graphql-e2e-tests
-  - sui-graphql-rpc
   - sui-graphql-rpc-client
   - sui-graphql-rpc-headers
   - sui-http
+  - sui-indexer-alt
   - sui-indexer-alt-e2e-tests
   - sui-indexer-alt-framework
   - sui-indexer-alt-jsonrpc
   - sui-indexer-alt-metrics
   - sui-indexer-alt-schema
   - sui-indexer-builder
-  - sui-json-rpc-api
   - sui-kvstore
   - sui-light-client
   - sui-macros
   - sui-metric-checker
   - sui-move-lsp
   - sui-mvr-graphql-e2e-tests
-  - sui-name-service
-  - sui-network
   - sui-open-rpc
   - sui-open-rpc-macros
   - sui-oracle
   - sui-package-dump
   - sui-package-management
-  - sui-package-resolver
   - sui-pg-db
   - sui-proc-macros
   - sui-protocol-config-macros
@@ -120,7 +120,6 @@ NOT MIGRATED CRATES (83):
   - sui-source-validation
   - sui-source-validation-service
   - sui-sql-macro
-  - sui-swarm
   - sui-synthetic-ingestion
   - sui-test-validator
   - sui-tls

@@ -1,0 +1,53 @@
+[package]
+name = "sui-genesis-builder"
+version = "0.0.0"
+authors = ["The Social Proof Foundation <brandon@socialproof.foundation>"]
+license = "Apache-2.0"
+publish = false
+edition = "2021"
+
+[lints]
+workspace = true
+
+[features]
+default = []
+use-mysocial = []
+
+[dependencies]
+anyhow.workspace = true
+bcs.workspace = true
+camino.workspace = true
+fastcrypto.workspace = true
+move-binary-format.workspace = true
+move-core-types.workspace = true
+rand.workspace = true
+serde.workspace = true
+serde_with.workspace = true
+serde_yaml.workspace = true
+tempfile.workspace = true
+tracing.workspace = true
+prometheus.workspace = true
+
+shared-crypto.workspace = true
+
+# Direct path dependencies instead of workspace references for testing
+mysocial-config = { path = "../mysocial-config", optional = true }
+mysocial-execution = { path = "../sui-execution", optional = true }
+mysocial-framework = { path = "../sui-framework", optional = true }
+mysocial-framework-snapshot = { path = "../sui-framework-snapshot", optional = true }
+mysocial-protocol-config = { path = "../mysocial-protocol-config", optional = true }
+mysocial-types = { path = "../mysocial-types", optional = true }
+
+sui-config = { path = "../sui-config", optional = true }
+sui-execution = { path = "../sui-execution", optional = true }
+sui-framework = { path = "../sui-framework", optional = true }
+sui-framework-snapshot = { path = "../sui-framework-snapshot", optional = true }
+sui-protocol-config = { path = "../sui-protocol-config", optional = true }
+sui-types = { path = "../sui-types", optional = true }
+
+[dev-dependencies]
+insta.workspace = true
+tempfile.workspace = true
+
+[target.'cfg(msim)'.dependencies]
+sui-simulator.workspace = true

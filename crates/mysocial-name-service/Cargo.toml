@@ -1,0 +1,20 @@
+[package]
+name = "sui-name-service" # Keeping name for compatibility with other crates
+version.workspace = true
+authors = ["The Social Proof Foundation <brandon@socialproof.foundation>"]
+license = "Apache-2.0"
+publish = false
+edition = "2021"
+
+[dependencies]
+bcs.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+
+move-core-types.workspace = true
+
+mysocial-types.workspace = true
+
+[features]
+default = []
+use-mysocial = []
