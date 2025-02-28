@@ -66,7 +66,13 @@ EOF
     cat Cargo.toml.tmp5 | perl -pe 's/thiserror\.workspace\s*=\s*true/thiserror = "1.0"/g' > Cargo.toml.tmp6
     cat Cargo.toml.tmp6 | perl -pe 's/eyre\.workspace\s*=\s*true/eyre = "0.6"/g' > Cargo.toml.tmp7
     cat Cargo.toml.tmp7 | perl -pe 's/async-trait\.workspace\s*=\s*true/async-trait = "0.1"/g' > Cargo.toml.tmp8
-    cat Cargo.toml.tmp8 | perl -pe 's/(\S+)\.workspace\s*=\s*true/$1 = "0.1.0"/g' > Cargo.toml
+    cat Cargo.toml.tmp8 | perl -pe 's/bcs\.workspace\s*=\s*true/bcs = "0.1"/g' > Cargo.toml.tmp9
+    cat Cargo.toml.tmp9 | perl -pe 's/move-binary-format\.workspace\s*=\s*true/move-binary-format = "0.1"/g' > Cargo.toml.tmp10
+    cat Cargo.toml.tmp10 | perl -pe 's/move-core-types\.workspace\s*=\s*true/move-core-types = "0.1"/g' > Cargo.toml.tmp11
+    cat Cargo.toml.tmp11 | perl -pe 's/move-command-line-common\.workspace\s*=\s*true/move-command-line-common = "0.1"/g' > Cargo.toml.tmp12
+    cat Cargo.toml.tmp12 | perl -pe 's/sui-rpc-api\.workspace\s*=\s*true/sui-rpc-api = "0.1"/g' > Cargo.toml.tmp13
+    cat Cargo.toml.tmp13 | perl -pe 's/lru\.workspace\s*=\s*true/lru = "0.7"/g' > Cargo.toml.tmp14
+    cat Cargo.toml.tmp14 | perl -pe 's/(\S+)\.workspace\s*=\s*true/$1 = "0.1.0"/g' > Cargo.toml
     rm Cargo.toml.tmp*
     
     # Handle workspace = true syntax
