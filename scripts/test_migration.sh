@@ -1,5 +1,6 @@
 #!/bin/bash
 # Test a migration on a specific crate by temporarily modifying the workspace
+# This script works by testing the crate in isolation
 
 set -e
 
@@ -11,28 +12,23 @@ if [ -z "$CRATE" ]; then
     exit 1
 fi
 
-ORIGINAL_WORKSPACE_FILE="Cargo.toml"
-BACKUP_WORKSPACE_FILE="${ORIGINAL_WORKSPACE_FILE}.bak"
+# Change to crate directory
+CRATE_PATH="crates/${CRATE}"
 
-# Create a backup of the workspace file
-cp "${ORIGINAL_WORKSPACE_FILE}" "${BACKUP_WORKSPACE_FILE}"
+if [ ! -d "${CRATE_PATH}" ]; then
+    echo "Error: Crate directory not found at ${CRATE_PATH}"
+    exit 1
+fi
 
-cleanup() {
-    echo "Restoring original workspace configuration..."
-    mv "${BACKUP_WORKSPACE_FILE}" "${ORIGINAL_WORKSPACE_FILE}"
-    echo "Done."
-}
+echo "Testing $CRATE in isolation to avoid package conflicts..."
 
-# Set up cleanup on exit
-trap cleanup EXIT
+# Run tests directly in the crate directory
+cd "${CRATE_PATH}"
+echo "Building crate in isolation..."
+cargo build
+echo "Running tests for ${CRATE}..."
+cargo test
 
-echo "Temporarily modifying workspace to test $CRATE migration..."
-
-# Comment out the sui-core entry to avoid package name conflicts
-sed -i '' '/crates\/sui-core/s/^/#/' "${ORIGINAL_WORKSPACE_FILE}"
-
-# Run the tests for the specified crate
-echo "Running tests for $CRATE..."
-cargo test -p "${CRATE}"
-
-echo "Tests completed. Restoring original workspace configuration."
+echo "Tests completed successfully!"
+echo "NOTE: This test only verifies that the crate builds and passes its own unit tests."
+echo "Integration with other crates will need to be verified in a full build."

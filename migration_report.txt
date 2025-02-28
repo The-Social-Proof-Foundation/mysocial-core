@@ -26,7 +26,7 @@ FULLY MIGRATED CRATES (23):
   - transaction-fuzzer
 
 PARTIALLY MIGRATED CRATES (11):
-  - sui
+  - sui-move-build  - sui
   - sui-benchmark
   - sui-core
   - sui-indexer-alt
@@ -91,7 +91,6 @@ NOT MIGRATED CRATES (92):
   - sui-light-client
   - sui-macros
   - sui-metric-checker
-  - sui-move-build
   - sui-move-lsp
   - sui-mvr-graphql-e2e-tests
   - sui-name-service
