@@ -8,16 +8,16 @@ use move_core_types::gas_algebra::InternalGas;
 use serde::{Deserialize, Serialize};
 use std::fmt::Formatter;
 use std::sync::LazyLock;
-use sui_types::base_types::ObjectRef;
-use sui_types::storage::ObjectStore;
-use sui_types::{
+use mysocial_types::base_types::ObjectRef;
+use mysocial_types::storage::ObjectStore;
+use mysocial_types::{
     base_types::ObjectID,
     digests::TransactionDigest,
     move_package::MovePackage,
     object::{Object, OBJECT_START_VERSION},
     MOVE_STDLIB_PACKAGE_ID, SUI_FRAMEWORK_PACKAGE_ID, SUI_SYSTEM_PACKAGE_ID,
 };
-use sui_types::{BRIDGE_PACKAGE_ID, DEEPBOOK_PACKAGE_ID};
+use mysocial_types::{BRIDGE_PACKAGE_ID, DEEPBOOK_PACKAGE_ID};
 use tracing::error;
 
 /// Encapsulates a system package in the framework
