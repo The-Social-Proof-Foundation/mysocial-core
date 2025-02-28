@@ -34,8 +34,10 @@ echo
 
 # Next suggested targets
 echo "Suggested next targets:"
-high_priority_not_migrated=$(grep -A 200 "NOT MIGRATED CRATES" migration_report.txt | grep "^  - sui-" | sort | head -n 5)
-for crate in $high_priority_not_migrated; do
-    dep_count=$(grep -c "\.workspace" crates/$crate/Cargo.toml 2>/dev/null || echo "0")
-    echo "  $crate ($dep_count dependencies)"
+grep -A 200 "NOT MIGRATED CRATES" migration_report.txt | grep "^  - sui-" | sort | head -n 5 | while read -r line; do
+    crate=${line#*- }
+    if [ -f "crates/$crate/Cargo.toml" ]; then
+        dep_count=$(grep -c "\.workspace" "crates/$crate/Cargo.toml" 2>/dev/null || echo "0")
+        echo "  $crate ($dep_count dependencies)"
+    fi
 done
