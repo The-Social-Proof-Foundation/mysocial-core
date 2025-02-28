@@ -43,14 +43,14 @@ use move_package::{
 use move_symbol_pool::Symbol;
 use serde_reflection::Registry;
 use sui_package_management::{resolve_published_id, PublishedAtError};
-use sui_protocol_config::{Chain, ProtocolConfig, ProtocolVersion};
-use sui_types::{
+use mysocial_protocol_config::{Chain, ProtocolConfig, ProtocolVersion};
+use mysocial_types::{
     base_types::ObjectID,
     error::{SuiError, SuiResult},
     is_system_package,
     move_package::{FnInfo, FnInfoKey, FnInfoMap, MovePackage},
-    BRIDGE_ADDRESS, DEEPBOOK_ADDRESS, MOVE_STDLIB_ADDRESS, SUI_FRAMEWORK_ADDRESS,
-    SUI_SYSTEM_ADDRESS,
+    BRIDGE_ADDRESS, DEEPBOOK_ADDRESS, MOVE_STDLIB_ADDRESS, MYSO_FRAMEWORK_ADDRESS as SUI_FRAMEWORK_ADDRESS,
+    MYSO_SYSTEM_ADDRESS as SUI_SYSTEM_ADDRESS,
 };
 use sui_verifier::verifier as sui_bytecode_verifier;
 

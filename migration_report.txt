@@ -1,6 +1,6 @@
 ===== MYSOCIAL MIGRATION STATUS =====
 
-FULLY MIGRATED CRATES (22):
+FULLY MIGRATED CRATES (23):
   - mysocial-config
   - mysocial-core
   - mysocial-indexer
@@ -18,13 +18,14 @@ FULLY MIGRATED CRATES (22):
   - sui-replay
   - sui-sdk
   - sui-simulator
+  - sui-single-node-benchmark
   - sui-storage
   - sui-surfer
   - sui-telemetry
   - test-cluster
   - transaction-fuzzer
 
-PARTIALLY MIGRATED CRATES (12):
+PARTIALLY MIGRATED CRATES (11):
   - sui
   - sui-benchmark
   - sui-core
@@ -32,7 +33,6 @@ PARTIALLY MIGRATED CRATES (12):
   - sui-json-rpc
   - sui-json-rpc-tests
   - sui-node
-  - sui-single-node-benchmark
   - sui-snapshot
   - sui-tool
   - sui-transactional-test-runner
@@ -135,11 +135,16 @@ NOT MIGRATED CRATES (92):
 Migration Challenges:
 - Package naming conflicts: Both mysocial-core and sui-core have the package name "sui-core" in Cargo.toml
 - This makes it difficult to have both packages in the workspace and use them together
-- For sui-single-node-benchmark, we've started the migration by adding mysocial dependencies, 
-  but can't fully migrate due to package name conflicts
+- For sui-single-node-benchmark and sui-move-build, we've started the migration by adding mysocial dependencies, 
+  but can't fully test the changes due to package name conflicts
+- The package name conflict prevents us from running tests in the normal way when both packages are in the workspace
 
 Next steps:
 1. Complete migration of partially migrated crates
 2. Focus on high-priority non-migrated crates
-3. Resolve package naming conflicts (options: use dynamic package selection with features, modify package names)
+3. Resolve package naming conflicts using one of these approaches:
+   a. Temporarily remove one of the conflicting packages from the workspace during testing
+   b. Use feature flags to conditionally include dependencies
+   c. Create a test script that temporarily updates Cargo.toml files with the right dependencies for testing
+   d. Consider renaming the package in mysocial-core's Cargo.toml to avoid conflicts
 4. Consider symlinks in crates/migrated/ for better organization

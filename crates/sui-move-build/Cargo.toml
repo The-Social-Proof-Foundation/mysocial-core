@@ -16,8 +16,10 @@ move-bytecode-verifier = { path = "../../external-crates/move/crates/move-byteco
 sui-verifier = { path = "../../sui-execution/latest/sui-verifier", package = "sui-verifier-latest" }
 
 serde-reflection.workspace = true
-sui-types.workspace = true
-sui-protocol-config.workspace = true
+mysocial-types = { path = "../mysocial-types" }
+sui-types.workspace = true # Keep for backward compatibility
+mysocial-protocol-config = { path = "../mysocial-protocol-config" }
+sui-protocol-config.workspace = true # Keep for backward compatibility
 sui-package-management.workspace = true
 
 move-binary-format.workspace = true
