@@ -5,6 +5,7 @@ use std::path::Path;
 
 use move_compiler::editions::Edition;
 
+// Make sure we're using our migrated version
 use crate::BuildConfig;
 
 #[test]
