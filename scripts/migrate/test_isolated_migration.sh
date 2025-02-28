@@ -81,6 +81,15 @@ EOF
     # Handle version.workspace
     sed -i '' 's/version\.workspace = true/version = "0.1.0"/g' Cargo.toml
     
+    # For isolated testing, we can remove dev-dependencies to simplify the process
+    # They're only used for tests which we won't run in the isolated environment
+    if grep -q "\\[dev-dependencies\\]" Cargo.toml; then
+        sed -i '' '/\[dev-dependencies\]/,$d' Cargo.toml
+        echo "" >> Cargo.toml
+        echo "[dev-dependencies]" >> Cargo.toml
+        echo "# Removed for isolated testing" >> Cargo.toml
+    fi
+    
     # Remove workspace lints if present
     if grep -q "lints" Cargo.toml; then
         sed -i '' '/\[lints\]/,/workspace = true/d' Cargo.toml
