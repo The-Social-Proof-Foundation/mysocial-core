@@ -48,18 +48,7 @@ replace_workspace_deps() {
     cp Cargo.toml Cargo.toml.bak
     
     # Process the Cargo.toml file
-    awk '
-    /\.workspace = true/ {
-        # Extract the dependency name
-        dep_name = $0;
-        gsub(/[ ]*[^ ]+\.workspace = true.*/, "", dep_name);
-        gsub(/[ ]*/, "", dep_name);
-        
-        # Replace workspace dependency with path dependency
-        gsub(/\.workspace = true/, "{ path = \"../../../crates/" dep_name "\" }", $0);
-    }
-    { print }
-    ' Cargo.toml.bak > Cargo.toml
+    cat Cargo.toml.bak | perl -pe 's/(\S+)\.workspace\s*=\s*true/$1 = "0.1.0"/g' > Cargo.toml
     
     # Special handling for mysocial-types
     if grep -q "mysocial-types" Cargo.toml; then

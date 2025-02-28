@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use fastcrypto_zkp::bn254::zk_login::OIDCProvider;
-use sui_config::transaction_deny_config::TransactionDenyConfig;
-use sui_types::{
+use mysocial_config::transaction_deny_config::TransactionDenyConfig;
+use mysocial_types::{
     base_types::ObjectRef,
     error::{SuiError, SuiResult, UserInputError},
     signature::GenericSignature,

@@ -9,25 +9,25 @@ pub use checked::*;
 mod checked {
     use std::collections::{BTreeMap, HashSet};
     use std::sync::Arc;
-    use sui_config::verifier_signing_config::VerifierSigningConfig;
-    use sui_protocol_config::ProtocolConfig;
-    use sui_types::base_types::{ObjectID, ObjectRef};
-    use sui_types::error::{SuiResult, UserInputError, UserInputResult};
-    use sui_types::executable_transaction::VerifiedExecutableTransaction;
-    use sui_types::metrics::BytecodeVerifierMetrics;
-    use sui_types::transaction::{
+    use mysocial_config::verifier_signing_config::VerifierSigningConfig;
+    use mysocial_protocol_config::ProtocolConfig;
+    use mysocial_types::base_types::{ObjectID, ObjectRef};
+    use mysocial_types::error::{SuiResult, UserInputError, UserInputResult};
+    use mysocial_types::executable_transaction::VerifiedExecutableTransaction;
+    use mysocial_types::metrics::BytecodeVerifierMetrics;
+    use mysocial_types::transaction::{
         CheckedInputObjects, InputObjectKind, InputObjects, ObjectReadResult, ObjectReadResultKind,
         ReceivingObjectReadResult, ReceivingObjects, TransactionData, TransactionDataAPI,
         TransactionKind,
     };
-    use sui_types::{
+    use mysocial_types::{
         base_types::{SequenceNumber, SuiAddress},
         error::SuiError,
         fp_bail, fp_ensure,
         gas::SuiGasStatus,
         object::{Object, Owner},
     };
-    use sui_types::{
+    use mysocial_types::{
         SUI_AUTHENTICATOR_STATE_OBJECT_ID, SUI_CLOCK_OBJECT_ID, SUI_CLOCK_OBJECT_SHARED_VERSION,
         SUI_RANDOMNESS_STATE_OBJECT_ID,
     };

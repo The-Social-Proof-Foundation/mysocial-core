@@ -26,7 +26,7 @@ FULLY MIGRATED CRATES (23):
   - transaction-fuzzer
 
 PARTIALLY MIGRATED CRATES (14):
-  - sui-framework
+  - sui-transaction-checks  - sui-framework
   - sui-test-transaction-builder
   - sui-move-build
   - sui
@@ -121,7 +121,6 @@ NOT MIGRATED CRATES (92):
   - sui-test-validator
   - sui-tls
   - sui-transaction-builder
-  - sui-transaction-checks
   - sui-upgrade-compatibility-transactional-tests
   - sui-verifier-transactional-tests
   - suins-indexer
