@@ -10,8 +10,8 @@ use sui_package_resolver::{
     error::Error as PackageResolverError, Package, PackageStore, PackageStoreWithLruCache, Result,
 };
 use sui_rpc_api::Client;
-use sui_types::base_types::ObjectID;
-use sui_types::object::{Data, Object};
+use mysocial_types::base_types::ObjectID;
+use mysocial_types::object::{Data, Object};
 use thiserror::Error;
 use tokio::sync::RwLock;
 use typed_store::rocks::{DBMap, MetricConf};

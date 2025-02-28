@@ -11,7 +11,7 @@ use std::fs::{create_dir_all, remove_file};
 use std::ops::Range;
 use std::path::{Path, PathBuf};
 use std::sync::Arc;
-use sui_types::base_types::EpochId;
+use mysocial_types::base_types::EpochId;
 
 use parquet::arrow::ArrowWriter;
 use parquet::basic::Compression;

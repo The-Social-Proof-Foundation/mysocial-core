@@ -10,9 +10,9 @@ use tokio::sync::Mutex;
 use tracing::error;
 
 use sui_rpc_api::{CheckpointData, CheckpointTransaction};
-use sui_types::effects::TransactionEffects;
-use sui_types::effects::TransactionEffectsAPI;
-use sui_types::transaction::{Command, TransactionDataAPI, TransactionKind};
+use mysocial_types::effects::TransactionEffects;
+use mysocial_types::effects::TransactionEffectsAPI;
+use mysocial_types::transaction::{Command, TransactionDataAPI, TransactionKind};
 
 use crate::handlers::AnalyticsHandler;
 use crate::tables::TransactionEntry;
@@ -197,8 +197,8 @@ mod tests {
     use fastcrypto::encoding::{Base64, Encoding};
     use simulacrum::Simulacrum;
     use sui_data_ingestion_core::Worker;
-    use sui_types::base_types::SuiAddress;
-    use sui_types::storage::ReadStore;
+    use mysocial_types::base_types::SuiAddress;
+    use mysocial_types::storage::ReadStore;
 
     #[tokio::test]
     pub async fn test_transaction_handler() -> anyhow::Result<()> {

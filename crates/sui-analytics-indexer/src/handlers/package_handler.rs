@@ -5,8 +5,8 @@ use anyhow::Result;
 use fastcrypto::encoding::{Base64, Encoding};
 use sui_data_ingestion_core::Worker;
 use sui_rpc_api::CheckpointData;
-use sui_types::full_checkpoint_content::CheckpointTransaction;
-use sui_types::object::Object;
+use mysocial_types::full_checkpoint_content::CheckpointTransaction;
+use mysocial_types::object::Object;
 use tokio::sync::Mutex;
 
 use crate::handlers::AnalyticsHandler;

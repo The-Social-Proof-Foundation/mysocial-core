@@ -5,12 +5,12 @@ use anyhow::Result;
 use std::collections::BTreeMap;
 use std::path::Path;
 use sui_data_ingestion_core::Worker;
-use sui_types::SYSTEM_PACKAGE_ADDRESSES;
+use mysocial_types::SYSTEM_PACKAGE_ADDRESSES;
 use tokio::sync::Mutex;
 
 use sui_package_resolver::Resolver;
 use sui_rpc_api::{CheckpointData, CheckpointTransaction};
-use sui_types::object::Object;
+use mysocial_types::object::Object;
 
 use crate::handlers::{get_move_struct, parse_struct, AnalyticsHandler};
 

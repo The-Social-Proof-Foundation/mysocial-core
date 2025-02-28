@@ -6,9 +6,9 @@ use sui_data_ingestion_core::Worker;
 use tokio::sync::Mutex;
 
 use sui_rpc_api::{CheckpointData, CheckpointTransaction};
-use sui_types::base_types::ObjectID;
-use sui_types::effects::TransactionEffects;
-use sui_types::transaction::TransactionDataAPI;
+use mysocial_types::base_types::ObjectID;
+use mysocial_types::effects::TransactionEffects;
+use mysocial_types::transaction::TransactionDataAPI;
 
 use crate::handlers::{AnalyticsHandler, InputObjectTracker, ObjectStatusTracker};
 use crate::tables::TransactionObjectEntry;

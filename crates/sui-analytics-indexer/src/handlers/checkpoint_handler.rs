@@ -7,9 +7,9 @@ use tokio::sync::Mutex;
 
 use sui_data_ingestion_core::Worker;
 use sui_rpc_api::{CheckpointData, CheckpointTransaction};
-use sui_types::effects::TransactionEffectsAPI;
-use sui_types::messages_checkpoint::{CertifiedCheckpointSummary, CheckpointSummary};
-use sui_types::transaction::TransactionDataAPI;
+use mysocial_types::effects::TransactionEffectsAPI;
+use mysocial_types::messages_checkpoint::{CertifiedCheckpointSummary, CheckpointSummary};
+use mysocial_types::transaction::TransactionDataAPI;
 
 use crate::handlers::AnalyticsHandler;
 use crate::tables::CheckpointEntry;

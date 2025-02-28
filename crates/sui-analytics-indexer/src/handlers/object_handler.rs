@@ -5,15 +5,15 @@ use anyhow::Result;
 use fastcrypto::encoding::{Base64, Encoding};
 use std::path::Path;
 use sui_data_ingestion_core::Worker;
-use sui_types::SYSTEM_PACKAGE_ADDRESSES;
+use mysocial_types::SYSTEM_PACKAGE_ADDRESSES;
 use tokio::sync::Mutex;
 
 use sui_json_rpc_types::SuiMoveStruct;
 use sui_package_resolver::Resolver;
 use sui_rpc_api::{CheckpointData, CheckpointTransaction};
-use sui_types::base_types::ObjectID;
-use sui_types::effects::TransactionEffects;
-use sui_types::object::Object;
+use mysocial_types::base_types::ObjectID;
+use mysocial_types::effects::TransactionEffects;
+use mysocial_types::object::Object;
 
 use crate::handlers::{
     get_move_struct, get_owner_address, get_owner_type, initial_shared_version, AnalyticsHandler,

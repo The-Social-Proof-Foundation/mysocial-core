@@ -9,13 +9,13 @@ use move_core_types::language_storage::{StructTag, TypeTag};
 use sui_data_ingestion_core::Worker;
 
 use sui_package_resolver::{PackageStore, Resolver};
-use sui_types::base_types::ObjectID;
-use sui_types::effects::TransactionEffects;
-use sui_types::effects::TransactionEffectsAPI;
-use sui_types::object::bounded_visitor::BoundedVisitor;
-use sui_types::object::{Object, Owner};
-use sui_types::transaction::TransactionData;
-use sui_types::transaction::TransactionDataAPI;
+use mysocial_types::base_types::ObjectID;
+use mysocial_types::effects::TransactionEffects;
+use mysocial_types::effects::TransactionEffectsAPI;
+use mysocial_types::object::bounded_visitor::BoundedVisitor;
+use mysocial_types::object::{Object, Owner};
+use mysocial_types::transaction::TransactionData;
+use mysocial_types::transaction::TransactionDataAPI;
 
 use crate::tables::{InputObjectKind, ObjectStatus, OwnerType};
 use crate::FileType;
@@ -294,7 +294,7 @@ mod tests {
     use move_core_types::language_storage::StructTag;
     use std::collections::BTreeMap;
     use std::str::FromStr;
-    use sui_types::base_types::ObjectID;
+    use mysocial_types::base_types::ObjectID;
 
     #[tokio::test]
     async fn test_wrapped_object_parsing() -> anyhow::Result<()> {

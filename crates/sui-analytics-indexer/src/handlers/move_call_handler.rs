@@ -6,8 +6,8 @@ use sui_data_ingestion_core::Worker;
 use tokio::sync::Mutex;
 
 use sui_rpc_api::CheckpointData;
-use sui_types::base_types::ObjectID;
-use sui_types::transaction::TransactionDataAPI;
+use mysocial_types::base_types::ObjectID;
+use mysocial_types::transaction::TransactionDataAPI;
 
 use crate::handlers::AnalyticsHandler;
 use crate::tables::MoveCallEntry;
