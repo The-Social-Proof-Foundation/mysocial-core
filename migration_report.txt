@@ -1,19 +1,22 @@
 ===== MYSOCIAL MIGRATION STATUS =====
 
-FULLY MIGRATED CRATES (23):
+FULLY MIGRATED CRATES (29):
   - mysocial-config
   - mysocial-core
   - mysocial-indexer
   - mysocial-json
   - mysocial-protocol-config
   - mysocial-types
+  - sui-authority-aggregation
   - sui-cluster-test
   - sui-config
+  - sui-framework
   - sui-indexer-alt-restorer
   - sui-json
   - sui-json-rpc-types
   - sui-keys
   - sui-move
+  - sui-move-build
   - sui-protocol-config
   - sui-replay
   - sui-sdk
@@ -21,18 +24,16 @@ FULLY MIGRATED CRATES (23):
   - sui-single-node-benchmark
   - sui-storage
   - sui-surfer
+  - sui-swarm-config
   - sui-telemetry
+  - sui-test-transaction-builder
+  - sui-transaction-checks
   - test-cluster
   - transaction-fuzzer
 
-PARTIALLY MIGRATED CRATES (17):
+PARTIALLY MIGRATED CRATES (12):
+  - sui-analytics-indexer-derive
   - sui-authority-aggregation
-  - sui-adapter-transactional-tests
-  - sui-swarm-config
-  - sui-transaction-checks
-  - sui-framework
-  - sui-test-transaction-builder
-  - sui-move-build
   - sui
   - sui-benchmark
   - sui-core
@@ -45,7 +46,7 @@ PARTIALLY MIGRATED CRATES (17):
   - sui-transactional-test-runner
   - x
 
-NOT MIGRATED CRATES (91):
+NOT MIGRATED CRATES (85):
   - anemo-benchmark
   - bin-version
   - mysocial-protocol-config-macros
@@ -58,8 +59,8 @@ NOT MIGRATED CRATES (91):
   - prometheus-closure-metric
   - shared-crypto
   - simulacrum
+  - sui-adapter-transactional-tests
   - sui-analytics-indexer
-  - sui-analytics-indexer-derive
   - sui-archival
   - sui-aws-orchestrator
   - sui-bridge
@@ -132,31 +133,7 @@ NOT MIGRATED CRATES (91):
   - typed-store-error
   - typed-store-workspace-hack
 
-Migration Challenges:
-- Package naming conflicts: Both mysocial-core and sui-core have the package name "sui-core" in Cargo.toml
-- This makes it difficult to have both packages in the workspace and use them together
-- For sui-single-node-benchmark and sui-move-build, we've started the migration by adding mysocial dependencies, 
-  but can't fully test the changes due to package name conflicts
-- The package name conflict prevents us from running tests in the normal way when both packages are in the workspace
-- For sui-adapter-transactional-tests, we've implemented a partial migration that supports both old and new dependencies
-
-Progress on Testing Infrastructure:
-- Implemented test_isolated_migration.sh script that creates a temporary workspace for testing migrated crates
-- The script handles workspace lints, package dependencies, and path adjustments needed for isolation
-- Added special handling for commonly used dependencies in the test environment
-- Improved handling for dual package references (package = "sui-types", path = "...") in isolated testing
-- Successfully migrated sui-authority-aggregation and sui-adapter-transactional-tests
-- Updated migration scripts to use workspace dependencies instead of direct paths for better compatibility
-
 Next steps:
 1. Complete migration of partially migrated crates
-2. Focus on high-priority non-migrated crates like sui-analytics-indexer-derive and sui-archival
-3. Improve migration scripts for better compatibility:
-   a. Continue improving test_isolated_migration.sh to handle external dependencies better
-   b. Add support for testing multi-crate dependencies in isolation
-   c. Update migrate_crate.sh to maintain backward compatibility in imports
-4. Resolve package naming conflicts using one of these approaches:
-   a. Temporarily remove one of the conflicting packages from the workspace during testing
-   b. Use feature flags to conditionally include dependencies 
-   c. Consider adding rename options to Cargo.toml files for all migrated packages
-5. Consider symlinks in crates/migrated/ for better organization
+2. Focus on high-priority non-migrated crates
+3. Consider symlinks in crates/migrated/ for better organization
