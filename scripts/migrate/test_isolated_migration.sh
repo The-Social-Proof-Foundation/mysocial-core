@@ -57,8 +57,20 @@ EOF
     cp Cargo.toml Cargo.toml.bak
     
     # Process the Cargo.toml file - handle both ".workspace = true" and "{ workspace = true }"
-    cat Cargo.toml.bak | perl -pe 's/(\S+)\.workspace\s*=\s*true/$1 = "0.1.0"/g' > Cargo.toml
+    # For commonly used dependencies, provide realistic versions
+    cat Cargo.toml.bak | perl -pe 's/syn\.workspace\s*=\s*true/syn = "1.0"/g' > Cargo.toml.tmp
+    cat Cargo.toml.tmp | perl -pe 's/proc-macro2\.workspace\s*=\s*true/proc-macro2 = "1.0"/g' > Cargo.toml.tmp2
+    cat Cargo.toml.tmp2 | perl -pe 's/quote\.workspace\s*=\s*true/quote = "1.0"/g' > Cargo.toml.tmp3
+    cat Cargo.toml.tmp3 | perl -pe 's/serde\.workspace\s*=\s*true/serde = { version = "1.0", features = ["derive"] }/g' > Cargo.toml.tmp4
+    cat Cargo.toml.tmp4 | perl -pe 's/tokio\.workspace\s*=\s*true/tokio = { version = "1.0", features = ["full"] }/g' > Cargo.toml.tmp5
+    cat Cargo.toml.tmp5 | perl -pe 's/(\S+)\.workspace\s*=\s*true/$1 = "0.1.0"/g' > Cargo.toml
+    rm Cargo.toml.tmp*
+    
+    # Handle workspace = true syntax
     sed -i '' 's/{ workspace = true }/= "0.1.0"/g' Cargo.toml
+    
+    # Handle version.workspace
+    sed -i '' 's/version\.workspace = true/version = "0.1.0"/g' Cargo.toml
     
     # Remove workspace lints if present
     if grep -q "lints" Cargo.toml; then
