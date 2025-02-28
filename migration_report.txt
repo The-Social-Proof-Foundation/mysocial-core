@@ -26,7 +26,7 @@ FULLY MIGRATED CRATES (23):
   - transaction-fuzzer
 
 PARTIALLY MIGRATED CRATES (16):
-  - sui-swarm-config
+  - sui-adapter-transactional-tests  - sui-swarm-config
   - sui-transaction-checks
   - sui-framework
   - sui-test-transaction-builder
@@ -56,7 +56,6 @@ NOT MIGRATED CRATES (92):
   - prometheus-closure-metric
   - shared-crypto
   - simulacrum
-  - sui-adapter-transactional-tests
   - sui-analytics-indexer
   - sui-analytics-indexer-derive
   - sui-archival
@@ -138,13 +137,20 @@ Migration Challenges:
 - For sui-single-node-benchmark and sui-move-build, we've started the migration by adding mysocial dependencies, 
   but can't fully test the changes due to package name conflicts
 - The package name conflict prevents us from running tests in the normal way when both packages are in the workspace
+- For sui-adapter-transactional-tests, we've implemented a partial migration that supports both old and new dependencies
+
+Progress on Testing Infrastructure:
+- Implemented test_isolated_migration.sh script that creates a temporary workspace for testing migrated crates
+- The script handles workspace lints, package dependencies, and path adjustments needed for isolation
+- Added special handling for commonly used dependencies in the test environment
+- Successfully tested migration of sui-adapter-transactional-tests with the improved testing approach
 
 Next steps:
 1. Complete migration of partially migrated crates
-2. Focus on high-priority non-migrated crates
+2. Focus on high-priority non-migrated crates like sui-analytics-indexer-derive and sui-authority-aggregation
 3. Resolve package naming conflicts using one of these approaches:
    a. Temporarily remove one of the conflicting packages from the workspace during testing
    b. Use feature flags to conditionally include dependencies
-   c. Create a test script that temporarily updates Cargo.toml files with the right dependencies for testing
+   c. Continue improving the test_isolated_migration.sh script for comprehensive testing
    d. Consider renaming the package in mysocial-core's Cargo.toml to avoid conflicts
 4. Consider symlinks in crates/migrated/ for better organization
