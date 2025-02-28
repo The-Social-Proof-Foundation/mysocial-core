@@ -1,7 +1,7 @@
 [package]
-name = "sui-json"
+name = "mysocial-json"
 version = "0.0.0"
-authors = ["Mysten Labs <build@mystenlabs.com>"]
+authors = ["The Social Proof Foundation <brandon@socialproof.foundation>"]
 license = "Apache-2.0"
 publish = false
 edition = "2021"
@@ -15,7 +15,6 @@ schemars.workspace = true
 
 sui-types.workspace = true
 mysocial-types.workspace = true
-mysocial-json = { path = "../mysocial-json" }
 
 move-binary-format.workspace = true
 move-bytecode-utils.workspace = true

@@ -1,0 +1,19 @@
+{
+  "name": "sui-json",
+  "status": "in-progress",
+  "original_path": "crates/sui-json",
+  "new_path": "crates/mysocial-json",
+  "migration_strategy": "wrapper",
+  "dependencies": 38,
+  "migration_notes": [
+    "Created wrapper in sui-json that re-exports mysocial-json",
+    "Core functionality moved to mysocial-json",
+    "Kept original sui-json package as a thin wrapper"
+  ],
+  "remaining_tasks": [
+    "Verify all imports are correctly redirected",
+    "Add to migrated/complete when fully tested",
+    "Update dependent packages to use new mysocial-json where appropriate"
+  ],
+  "last_updated": "2025-02-27"
+}

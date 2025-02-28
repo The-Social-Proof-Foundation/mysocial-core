@@ -1,0 +1,18 @@
+{
+  "name": "sui-config",
+  "status": "in-progress",
+  "original_path": "crates/sui-config",
+  "new_path": "crates/mysocial-config",
+  "migration_strategy": "wrapper",
+  "dependencies": 40,
+  "migration_notes": [
+    "Created wrapper in sui-config that re-exports mysocial-config",
+    "Implemented backward compatibility in constants and functions",
+    "Modified file paths and constants to use mysocial prefix"
+  ],
+  "remaining_tasks": [
+    "Verify all imports are correctly redirected",
+    "Add to migrated/complete when fully tested"
+  ],
+  "last_updated": "2025-02-27"
+}

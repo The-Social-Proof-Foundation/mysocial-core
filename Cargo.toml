@@ -96,6 +96,8 @@ members = [
     "crates/sui-config",
     "crates/sui-core",
     "crates/mysocial-core",
+    "crates/mysocial-config",
+    "crates/mysocial-json",
     "crates/sui-cost",
     "crates/sui-data-ingestion",
     "crates/sui-data-ingestion-core",
