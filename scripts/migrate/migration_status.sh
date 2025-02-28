@@ -10,7 +10,7 @@ NC='\033[0m' # No Color
 # Extract counts from migration_report.txt
 FULLY_MIGRATED=$(grep -A 100 "FULLY MIGRATED CRATES" migration_report.txt | grep "^  - " | wc -l)
 PARTIALLY_MIGRATED=$(grep -A 100 "PARTIALLY MIGRATED CRATES" migration_report.txt | grep "^  - " | wc -l)
-NOT_MIGRATED=$(grep -A 200 "NOT MIGRATED CRATES" migration_report.txt | grep "^  - " | wc -l)
+NOT_MIGRATED=$(grep -A 200 "NOT MIGRATED CRATES" migration_report.txt | grep -c "^  - ")
 
 TOTAL=$((FULLY_MIGRATED + PARTIALLY_MIGRATED + NOT_MIGRATED))
 PERCENT_FULLY_MIGRATED=$(echo "scale=1; 100 * $FULLY_MIGRATED / $TOTAL" | bc)
