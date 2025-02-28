@@ -33,3 +33,8 @@ move-compiler.workspace = true
 serde_json.workspace = true
 sui-move-build.workspace = true
 tower.workspace = true
+
+# Migration status: Complete
+# This crate has been fully migrated to use mysocial-types
+# All imports are now using mysocial-types instead of sui-types,
+# but we maintain both dependencies for backward compatibility

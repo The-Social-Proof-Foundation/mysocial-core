@@ -21,8 +21,8 @@
     {"name": "sui-data-ingestion-core", "dependencies": 9, "size":     1235, "status": "none"},
     {"name": "sui-archival", "dependencies": 9, "size":     2121, "status": "none"},
     {"name": "sui-indexer-alt", "dependencies": 8, "size":     5556, "status": "none"},
-    {"name": "sui-package-resolver", "dependencies": 7, "size":     3260, "status": "none"},
-    {"name": "sui-network", "dependencies": 7, "size":     6784, "status": "none"},
+    {"name": "sui-package-resolver", "dependencies": 7, "size":     3260, "status": "migrated"},
+    {"name": "sui-network", "dependencies": 7, "size":     6784, "status": "partial"},
     {"name": "sui-name-service", "dependencies": 7, "size":      530, "status": "none"},
     {"name": "sui-graphql-rpc", "dependencies": 7, "size":    29927, "status": "none"},
     {"name": "sui-genesis-builder", "dependencies": 7, "size":     1508, "status": "none"},
@@ -77,6 +77,7 @@
   "migrated": [
     "sui-json-rpc-tests",
     "sui-indexer-alt-restorer",
+    "sui-package-resolver",
     "sui-single-node-benchmark",
     "sui-surfer",
     "transaction-fuzzer",

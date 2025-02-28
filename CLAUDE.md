@@ -26,6 +26,11 @@ We've made significant progress in implementing the MySocial rebranding across s
 - **sui-benchmark**: Updated to use mysocial-core, mysocial-types, and mysocial-protocol-config
 - **sui-cluster-test**: Updated to use mysocial-types for core data types
 - **sui-replay**: Updated to use mysocial-core, mysocial-types, and mysocial-protocol-config
+- **sui-package-resolver**: Fully migrated to use mysocial-types while maintaining backward compatibility
+- **sui-network**: Substantially migrated with feature flags to use mysocial-types, mysocial-config, and mysocial-macros
+  - Implemented dual-crate strategy with conditional imports
+  - Created equivalents for all core modules: discovery, randomness, and state_sync
+  - Used feature flags to control which implementation is used
 
 ### Enhanced alias.rs Module
 We've expanded the alias.rs module in mysocial-core to handle more commonly used types:
@@ -274,8 +279,8 @@ We've made significant progress in our migration efforts, including:
 1. Continue renaming remaining high-priority modules:
    - **sui-json-rpc-tests**: Update to use mysocial-core and mysocial-types for testing infrastructure
    - **sui-transactional-test-runner**: Fully migrate to use mysocial-core and types
-   - **sui-package-resolver**: Update to use mysocial-types for package resolution
-   - **sui-network**: Update to use mysocial-types for network operations
+   - **sui-genesis-builder**: Update to use mysocial-types and mysocial-core
+   - **sui-name-service**: Update to use mysocial-types and dependencies
 
 2. Enhance testing infrastructure:
    - Improve test_isolated_migration.sh to handle complex dependencies like fastcrypto

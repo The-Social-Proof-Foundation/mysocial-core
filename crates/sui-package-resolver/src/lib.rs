@@ -1781,8 +1781,10 @@ mod tests {
     use move_core_types::ident_str;
     use std::sync::Arc;
     use std::{path::PathBuf, str::FromStr, sync::RwLock};
-    use sui_types::base_types::random_object_ref;
-    use sui_types::transaction::ObjectArg;
+    use mysocial_types::base_types::random_object_ref;
+    use mysocial_types::transaction::ObjectArg;
+    // For backward compatibility
+    use sui_types;
 
     use move_compiler::compiled_unit::NamedCompiledModule;
     use sui_move_build::{BuildConfig, CompiledPackage};

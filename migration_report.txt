@@ -1,6 +1,6 @@
 ===== MYSOCIAL MIGRATION STATUS =====
 
-FULLY MIGRATED CRATES (29):
+FULLY MIGRATED CRATES (30):
   - mysocial-config
   - mysocial-core
   - mysocial-indexer
@@ -17,6 +17,7 @@ FULLY MIGRATED CRATES (29):
   - sui-keys
   - sui-move
   - sui-move-build
+  - sui-package-resolver
   - sui-protocol-config
   - sui-replay
   - sui-sdk
@@ -31,7 +32,7 @@ FULLY MIGRATED CRATES (29):
   - test-cluster
   - transaction-fuzzer
 
-PARTIALLY MIGRATED CRATES (14):
+PARTIALLY MIGRATED CRATES (16):
   - sui-archival
   - sui-analytics-indexer
   - sui-analytics-indexer-derive
@@ -42,6 +43,7 @@ PARTIALLY MIGRATED CRATES (14):
   - sui-indexer-alt
   - sui-json-rpc
   - sui-json-rpc-tests
+  - sui-network
   - sui-node
   - sui-snapshot
   - sui-tool
