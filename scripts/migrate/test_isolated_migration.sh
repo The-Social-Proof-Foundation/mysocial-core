@@ -63,7 +63,10 @@ EOF
     cat Cargo.toml.tmp2 | perl -pe 's/quote\.workspace\s*=\s*true/quote = "1.0"/g' > Cargo.toml.tmp3
     cat Cargo.toml.tmp3 | perl -pe 's/serde\.workspace\s*=\s*true/serde = { version = "1.0", features = ["derive"] }/g' > Cargo.toml.tmp4
     cat Cargo.toml.tmp4 | perl -pe 's/tokio\.workspace\s*=\s*true/tokio = { version = "1.0", features = ["full"] }/g' > Cargo.toml.tmp5
-    cat Cargo.toml.tmp5 | perl -pe 's/(\S+)\.workspace\s*=\s*true/$1 = "0.1.0"/g' > Cargo.toml
+    cat Cargo.toml.tmp5 | perl -pe 's/thiserror\.workspace\s*=\s*true/thiserror = "1.0"/g' > Cargo.toml.tmp6
+    cat Cargo.toml.tmp6 | perl -pe 's/eyre\.workspace\s*=\s*true/eyre = "0.6"/g' > Cargo.toml.tmp7
+    cat Cargo.toml.tmp7 | perl -pe 's/async-trait\.workspace\s*=\s*true/async-trait = "0.1"/g' > Cargo.toml.tmp8
+    cat Cargo.toml.tmp8 | perl -pe 's/(\S+)\.workspace\s*=\s*true/$1 = "0.1.0"/g' > Cargo.toml
     rm Cargo.toml.tmp*
     
     # Handle workspace = true syntax
