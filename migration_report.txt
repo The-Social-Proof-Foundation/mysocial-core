@@ -31,7 +31,8 @@ FULLY MIGRATED CRATES (29):
   - test-cluster
   - transaction-fuzzer
 
-PARTIALLY MIGRATED CRATES (12):
+PARTIALLY MIGRATED CRATES (13):
+  - sui-analytics-indexer
   - sui-analytics-indexer-derive
   - sui-authority-aggregation
   - sui
@@ -46,7 +47,7 @@ PARTIALLY MIGRATED CRATES (12):
   - sui-transactional-test-runner
   - x
 
-NOT MIGRATED CRATES (85):
+NOT MIGRATED CRATES (84):
   - anemo-benchmark
   - bin-version
   - mysocial-protocol-config-macros
@@ -60,7 +61,6 @@ NOT MIGRATED CRATES (85):
   - shared-crypto
   - simulacrum
   - sui-adapter-transactional-tests
-  - sui-analytics-indexer
   - sui-archival
   - sui-aws-orchestrator
   - sui-bridge
