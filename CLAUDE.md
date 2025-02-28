@@ -113,6 +113,18 @@ use mysocial_types::MYSO_FRAMEWORK_ADDRESS;  // New constant name
 use mysocial_types::parse_myso_type_tag;
 ```
 
+### Dependency Management Examples
+
+```toml
+# Example maintaining both dependencies for compatibility
+[dependencies]
+mysocial-types = { workspace = true }  # New name
+sui-types = { workspace = true }       # Keeps for backward compatibility
+
+# Example with renaming using package = notation for isolated testing
+mysocial-types = { package = "sui-types", path = "../path/to/mysocial-types" }
+```
+
 ## 4. Testing Compatibility Commands
 
 To ensure compatibility between the renamed packages and code expecting the original names:
@@ -178,6 +190,7 @@ During our rebranding effort, we've identified several challenges and developed 
 - **Problem**: Renamed modules might have tests that reference old module names
 - **Solution**: Update test files simultaneously with their corresponding implementation
 - **Approach**: Ensure all tests pass after each module rename before proceeding
+- **Implementation**: Created test_isolated_migration.sh script to test crates in isolation
 
 ### Challenge: Documentation Consistency
 - **Problem**: Documentation may reference old module names
@@ -188,6 +201,16 @@ During our rebranding effort, we've identified several challenges and developed 
 - **Problem**: External consumers may depend on specific module paths
 - **Solution**: Consider versioned modules or clear upgrade paths
 - **Approach**: Provide migration guides for external consumers
+
+### Challenge: Testing in Isolated Environments
+- **Problem**: With both old and new packages in workspace, tests might fail due to conflicts
+- **Solution**: Created isolated testing environments for migrated crates
+- **Approach**: 
+  1. Copy crate to a temporary workspace
+  2. Fix dependency paths to point to original repository
+  3. Handle the package name vs. directory name mismatches
+  4. Use `package = "old-name"` syntax to resolve name conflicts
+  5. Test the crate in isolation before integrating
 
 ### Challenge: Package Name Conflicts
 - **Problem**: Both mysocial-core and sui-core have the package name "sui-core" in Cargo.toml, causing conflicts in workspace
