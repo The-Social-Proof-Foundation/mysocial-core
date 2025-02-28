@@ -25,8 +25,9 @@ FULLY MIGRATED CRATES (23):
   - test-cluster
   - transaction-fuzzer
 
-PARTIALLY MIGRATED CRATES (14):
-  - sui-transaction-checks  - sui-framework
+PARTIALLY MIGRATED CRATES (15):
+  - sui-transaction-checks
+  - sui-framework
   - sui-test-transaction-builder
   - sui-move-build
   - sui
