@@ -25,8 +25,10 @@ FULLY MIGRATED CRATES (23):
   - test-cluster
   - transaction-fuzzer
 
-PARTIALLY MIGRATED CRATES (16):
-  - sui-adapter-transactional-tests  - sui-swarm-config
+PARTIALLY MIGRATED CRATES (17):
+  - sui-authority-aggregation
+  - sui-adapter-transactional-tests
+  - sui-swarm-config
   - sui-transaction-checks
   - sui-framework
   - sui-test-transaction-builder
@@ -43,7 +45,7 @@ PARTIALLY MIGRATED CRATES (16):
   - sui-transactional-test-runner
   - x
 
-NOT MIGRATED CRATES (92):
+NOT MIGRATED CRATES (91):
   - anemo-benchmark
   - bin-version
   - mysocial-protocol-config-macros
@@ -59,7 +61,6 @@ NOT MIGRATED CRATES (92):
   - sui-analytics-indexer
   - sui-analytics-indexer-derive
   - sui-archival
-  - sui-authority-aggregation
   - sui-aws-orchestrator
   - sui-bridge
   - sui-bridge-cli
@@ -143,14 +144,19 @@ Progress on Testing Infrastructure:
 - Implemented test_isolated_migration.sh script that creates a temporary workspace for testing migrated crates
 - The script handles workspace lints, package dependencies, and path adjustments needed for isolation
 - Added special handling for commonly used dependencies in the test environment
-- Successfully tested migration of sui-adapter-transactional-tests with the improved testing approach
+- Improved handling for dual package references (package = "sui-types", path = "...") in isolated testing
+- Successfully migrated sui-authority-aggregation and sui-adapter-transactional-tests
+- Updated migration scripts to use workspace dependencies instead of direct paths for better compatibility
 
 Next steps:
 1. Complete migration of partially migrated crates
-2. Focus on high-priority non-migrated crates like sui-analytics-indexer-derive and sui-authority-aggregation
-3. Resolve package naming conflicts using one of these approaches:
+2. Focus on high-priority non-migrated crates like sui-analytics-indexer-derive and sui-archival
+3. Improve migration scripts for better compatibility:
+   a. Continue improving test_isolated_migration.sh to handle external dependencies better
+   b. Add support for testing multi-crate dependencies in isolation
+   c. Update migrate_crate.sh to maintain backward compatibility in imports
+4. Resolve package naming conflicts using one of these approaches:
    a. Temporarily remove one of the conflicting packages from the workspace during testing
-   b. Use feature flags to conditionally include dependencies
-   c. Continue improving the test_isolated_migration.sh script for comprehensive testing
-   d. Consider renaming the package in mysocial-core's Cargo.toml to avoid conflicts
-4. Consider symlinks in crates/migrated/ for better organization
+   b. Use feature flags to conditionally include dependencies 
+   c. Consider adding rename options to Cargo.toml files for all migrated packages
+5. Consider symlinks in crates/migrated/ for better organization
