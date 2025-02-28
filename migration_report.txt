@@ -1,0 +1,137 @@
+===== MYSOCIAL MIGRATION STATUS =====
+
+FULLY MIGRATED CRATES (18):
+  - mysocial-core
+  - mysocial-indexer
+  - mysocial-protocol-config
+  - mysocial-types
+  - sui-cluster-test
+  - sui-config
+  - sui-indexer-alt-restorer
+  - sui-json
+  - sui-json-rpc-types
+  - sui-keys
+  - sui-move
+  - sui-replay
+  - sui-sdk
+  - sui-simulator
+  - sui-single-node-benchmark
+  - sui-storage
+  - sui-telemetry
+  - test-cluster
+
+PARTIALLY MIGRATED CRATES (13):
+  - sui
+  - sui-benchmark
+  - sui-core
+  - sui-indexer-alt
+  - sui-json-rpc
+  - sui-json-rpc-tests
+  - sui-node
+  - sui-snapshot
+  - sui-surfer
+  - sui-tool
+  - sui-transactional-test-runner
+  - transaction-fuzzer
+  - x
+
+NOT MIGRATED CRATES (94):
+  - anemo-benchmark
+  - bin-version
+  - mysocial-protocol-config-macros
+  - mysten-common
+  - mysten-metrics
+  - mysten-network
+  - mysten-service
+  - mysten-util-mem
+  - mysten-util-mem-derive
+  - prometheus-closure-metric
+  - shared-crypto
+  - simulacrum
+  - sui-adapter-transactional-tests
+  - sui-analytics-indexer
+  - sui-analytics-indexer-derive
+  - sui-archival
+  - sui-authority-aggregation
+  - sui-aws-orchestrator
+  - sui-bridge
+  - sui-bridge-cli
+  - sui-bridge-indexer
+  - sui-cost
+  - sui-data-ingestion
+  - sui-data-ingestion-core
+  - sui-deepbook-indexer
+  - sui-default-config
+  - sui-e2e-tests
+  - sui-edge-proxy
+  - sui-enum-compat-util
+  - sui-faucet
+  - sui-field-count
+  - sui-field-count-derive
+  - sui-framework
+  - sui-framework-snapshot
+  - sui-framework-tests
+  - sui-genesis-builder
+  - sui-graphql-e2e-tests
+  - sui-graphql-rpc
+  - sui-graphql-rpc-client
+  - sui-graphql-rpc-headers
+  - sui-http
+  - sui-indexer-alt-e2e-tests
+  - sui-indexer-alt-framework
+  - sui-indexer-alt-jsonrpc
+  - sui-indexer-alt-metrics
+  - sui-indexer-alt-schema
+  - sui-indexer-builder
+  - sui-json-rpc-api
+  - sui-kvstore
+  - sui-light-client
+  - sui-macros
+  - sui-metric-checker
+  - sui-move-build
+  - sui-move-lsp
+  - sui-mvr-graphql-e2e-tests
+  - sui-mvr-graphql-rpc
+  - sui-name-service
+  - sui-network
+  - sui-open-rpc
+  - sui-open-rpc-macros
+  - sui-oracle
+  - sui-package-dump
+  - sui-package-management
+  - sui-package-resolver
+  - sui-pg-db
+  - sui-proc-macros
+  - sui-protocol-config
+  - sui-protocol-config-macros
+  - sui-proxy
+  - sui-rosetta
+  - sui-rpc-api
+  - sui-rpc-benchmark
+  - sui-rpc-loadgen
+  - sui-security-watchdog
+  - sui-source-validation
+  - sui-source-validation-service
+  - sui-sql-macro
+  - sui-swarm
+  - sui-swarm-config
+  - sui-synthetic-ingestion
+  - sui-test-transaction-builder
+  - sui-test-validator
+  - sui-tls
+  - sui-transaction-builder
+  - sui-transaction-checks
+  - sui-upgrade-compatibility-transactional-tests
+  - sui-verifier-transactional-tests
+  - suins-indexer
+  - suiop-cli
+  - telemetry-subscribers
+  - typed-store
+  - typed-store-derive
+  - typed-store-error
+  - typed-store-workspace-hack
+
+Next steps:
+1. Complete migration of partially migrated crates
+2. Focus on high-priority non-migrated crates
+3. Consider symlinks in crates/migrated/ for better organization

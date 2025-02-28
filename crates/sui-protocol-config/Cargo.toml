@@ -10,10 +10,11 @@ edition = "2021"
 workspace = true
 
 [dependencies]
+mysocial-protocol-config = { path = "../mysocial-protocol-config" }  # Use the new crate
+mysocial-protocol-config-macros = { path = "../mysocial-protocol-config-macros" }  # Use the new macros
 serde.workspace = true
 tracing.workspace = true
 serde_with.workspace = true
-sui-protocol-config-macros.workspace = true
 schemars.workspace = true
 insta.workspace = true
 clap.workspace = true

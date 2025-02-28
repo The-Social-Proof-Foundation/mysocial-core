@@ -1,21 +1,15 @@
 // Copyright (c) The Social Proof Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use std::{
-    cell::RefCell,
-    collections::BTreeSet,
-    sync::atomic::{AtomicBool, Ordering},
-};
+// This is now a compatibility wrapper around mysocial-protocol-config
+// Simply re-exporting all functionality from the new crate
 
-use clap::*;
-use move_vm_config::verifier::VerifierConfig;
-use serde::{Deserialize, Serialize};
-use serde_with::skip_serializing_none;
-use sui_protocol_config_macros::{
-    ProtocolConfigAccessors, ProtocolConfigFeatureFlagsGetters, ProtocolConfigOverride,
-};
-use tracing::{info, warn};
+// Re-export everything from mysocial-protocol-config
+pub use mysocial_protocol_config::*;
 
+// The rest of this file is kept as documentation reference only
+// All actual implementation is in mysocial-protocol-config
+/* 
 /// The minimum and maximum protocol versions supported by this build.
 const MIN_PROTOCOL_VERSION: u64 = 1;
 const MAX_PROTOCOL_VERSION: u64 = 75;
