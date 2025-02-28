@@ -11,21 +11,21 @@ use sui_sdk::rpc_types::{
     SuiTransactionBlockResponse,
 };
 use sui_sdk::wallet_context::WalletContext;
-use sui_types::base_types::{ObjectID, ObjectRef, SequenceNumber, SuiAddress};
-use sui_types::crypto::{get_key_pair, AccountKeyPair, Signature, Signer};
-use sui_types::digests::TransactionDigest;
-use sui_types::multisig::{BitmapUnit, MultiSig, MultiSigPublicKey};
-use sui_types::multisig_legacy::{MultiSigLegacy, MultiSigPublicKeyLegacy};
-use sui_types::object::Owner;
-use sui_types::signature::GenericSignature;
-use sui_types::sui_system_state::SUI_SYSTEM_MODULE_NAME;
-use sui_types::transaction::{
+use mysocial_types::base_types::{ObjectID, ObjectRef, SequenceNumber, SuiAddress};
+use mysocial_types::crypto::{get_key_pair, AccountKeyPair, Signature, Signer};
+use mysocial_types::digests::TransactionDigest;
+use mysocial_types::multisig::{BitmapUnit, MultiSig, MultiSigPublicKey};
+use mysocial_types::multisig_legacy::{MultiSigLegacy, MultiSigPublicKeyLegacy};
+use mysocial_types::object::Owner;
+use mysocial_types::signature::GenericSignature;
+use mysocial_types::sui_system_state::SUI_SYSTEM_MODULE_NAME;
+use mysocial_types::transaction::{
     CallArg, ObjectArg, ProgrammableTransaction, Transaction, TransactionData,
     DEFAULT_VALIDATOR_GAS_PRICE, TEST_ONLY_GAS_UNIT_FOR_HEAVY_COMPUTATION_STORAGE,
     TEST_ONLY_GAS_UNIT_FOR_TRANSFER,
 };
-use sui_types::SUI_RANDOMNESS_STATE_OBJECT_ID;
-use sui_types::{TypeTag, SUI_SYSTEM_PACKAGE_ID};
+use mysocial_types::SUI_RANDOMNESS_STATE_OBJECT_ID;
+use mysocial_types::{TypeTag, SUI_SYSTEM_PACKAGE_ID};
 
 pub struct TestTransactionBuilder {
     test_data: TestTransactionData,
