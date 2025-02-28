@@ -261,6 +261,8 @@ We've made significant progress in our migration efforts, including:
    - Added support for maintaining dual dependencies during transition
 
 2. **Successfully Migrated Crates**:
+   - **sui-archival**: Migrated to use mysocial-types and mysocial-config for archive functionality
+   - **sui-analytics-indexer**: Updated to use mysocial-types for analytics processing
    - **sui-authority-aggregation**: Successfully migrated to use mysocial-types
    - **sui-analytics-indexer-derive**: Confirmed compatibility with migration approach
    - **sui-adapter-transactional-tests**: Updated to use both old and new dependency imports
@@ -270,15 +272,25 @@ We've made significant progress in our migration efforts, including:
 
 ## Next Steps
 1. Continue renaming remaining high-priority modules:
-   - **sui-analytics-indexer**: Update to use mysocial-types for analytics data processing
-   - **sui-archival**: Update to use mysocial-core and mysocial-types for archival functionality
    - **sui-json-rpc-tests**: Update to use mysocial-core and mysocial-types for testing infrastructure
    - **sui-transactional-test-runner**: Fully migrate to use mysocial-core and types
-2. Expand the alias.rs module to include additional types for components like:
+   - **sui-package-resolver**: Update to use mysocial-types for package resolution
+   - **sui-network**: Update to use mysocial-types for network operations
+
+2. Enhance testing infrastructure:
+   - Improve test_isolated_migration.sh to handle complex dependencies like fastcrypto
+   - Add support for testing crates with non-standard workspace dependencies
+   - Create a more comprehensive testing approach for multi-crate dependencies
+
+3. Expand the alias.rs module to include additional types for components like:
    - Fuzzing utilities
    - Authority verification components
    - Transaction execution components
-3. Develop automated verification scripts to ensure consistent usage across the codebase
-4. Update relevant documentation to reflect the new naming conventions
-5. Create a migration guide for external developers who build on our platform
-6. Finish verification of integration tests to ensure all components function correctly with the new naming
+
+4. Develop automated verification scripts to ensure consistent usage across the codebase
+
+5. Update relevant documentation to reflect the new naming conventions
+
+6. Create a migration guide for external developers who build on our platform
+
+7. Finish verification of integration tests to ensure all components function correctly with the new naming
