@@ -56,29 +56,41 @@ EOF
     # This is a more reliable approach than using sed for complex replacements
     cp Cargo.toml Cargo.toml.bak
     
-    # Process the Cargo.toml file
+    # Process the Cargo.toml file - handle both ".workspace = true" and "{ workspace = true }"
     cat Cargo.toml.bak | perl -pe 's/(\S+)\.workspace\s*=\s*true/$1 = "0.1.0"/g' > Cargo.toml
+    sed -i '' 's/{ workspace = true }/= "0.1.0"/g' Cargo.toml
     
     # Remove workspace lints if present
     if grep -q "lints" Cargo.toml; then
         sed -i '' '/\[lints\]/,/workspace = true/d' Cargo.toml
     fi
     
-    # Special handling for mysocial-types
-    if grep -q "mysocial-types" Cargo.toml; then
-        sed -i '' 's|{ path = "../mysocial-types" }|{ path = "../../../crates/mysocial-types" }|g' Cargo.toml
+    local ROOT_DIR="$CURRENT_DIR"
+    
+    # Use direct paths for core sui/mysocial dependencies, handling the mismatch between directory and package names
+    
+    # Handle mysocial-types - preserving both for compatibility
+    if grep -q "mysocial-types = " Cargo.toml; then
+        # Change to path-based reference but keep both dependencies
+        sed -i '' "s|mysocial-types = .*|mysocial-types = { package = \"sui-types\", path = \"$ROOT_DIR/crates/mysocial-types\" }|g" Cargo.toml
     fi
     
-    if grep -q "mysocial-core" Cargo.toml; then
-        sed -i '' 's|{ path = "../mysocial-core" }|{ path = "../../../crates/mysocial-core" }|g' Cargo.toml
+    # Handle mysocial-core - preserving both for compatibility
+    if grep -q "mysocial-core = " Cargo.toml; then
+        # Change to path-based reference but keep both dependencies
+        sed -i '' "s|mysocial-core = .*|mysocial-core = { package = \"sui-core\", path = \"$ROOT_DIR/crates/mysocial-core\" }|g" Cargo.toml
     fi
     
-    if grep -q "mysocial-config" Cargo.toml; then
-        sed -i '' 's|{ path = "../mysocial-config" }|{ path = "../../../crates/mysocial-config" }|g' Cargo.toml
+    # Handle mysocial-config - preserving both for compatibility
+    if grep -q "mysocial-config = " Cargo.toml; then
+        # Change to path-based reference but keep both dependencies
+        sed -i '' "s|mysocial-config = .*|mysocial-config = { package = \"sui-config\", path = \"$ROOT_DIR/crates/mysocial-config\" }|g" Cargo.toml
     fi
     
-    if grep -q "mysocial-protocol-config" Cargo.toml; then
-        sed -i '' 's|{ path = "../mysocial-protocol-config" }|{ path = "../../../crates/mysocial-protocol-config" }|g' Cargo.toml
+    # Handle mysocial-protocol-config - preserving both for compatibility
+    if grep -q "mysocial-protocol-config = " Cargo.toml; then
+        # Change to path-based reference but keep both dependencies
+        sed -i '' "s|mysocial-protocol-config = .*|mysocial-protocol-config = { package = \"sui-protocol-config\", path = \"$ROOT_DIR/crates/mysocial-protocol-config\" }|g" Cargo.toml
     fi
     
     # Add special handling for partially migrated dependencies
