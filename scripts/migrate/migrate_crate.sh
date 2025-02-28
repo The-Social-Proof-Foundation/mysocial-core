@@ -24,50 +24,48 @@ echo "Starting migration of ${CRATE}..."
 update_cargo_toml() {
     echo "Updating Cargo.toml dependencies..."
     
-    # Add mysocial-types with direct path reference
+    # Add mysocial-types with workspace reference
     if grep -q "sui-types" "${CRATE_PATH}/Cargo.toml"; then
         # Check if mysocial-types is already added
         if ! grep -q "mysocial-types" "${CRATE_PATH}/Cargo.toml"; then
             sed -i '' '/sui-types/i\
-mysocial-types = { path = "../mysocial-types" }\
+mysocial-types = { workspace = true }\
 ' "${CRATE_PATH}/Cargo.toml"
             # Add comment to existing sui-types
             sed -i '' '/sui-types/s/$/  # Keep for backward compatibility/' "${CRATE_PATH}/Cargo.toml"
         fi
     fi
     
-    # Add mysocial-protocol-config with direct path reference
+    # Add mysocial-protocol-config with workspace reference
     if grep -q "sui-protocol-config" "${CRATE_PATH}/Cargo.toml"; then
         # Check if mysocial-protocol-config is already added
         if ! grep -q "mysocial-protocol-config" "${CRATE_PATH}/Cargo.toml"; then
             sed -i '' '/sui-protocol-config/i\
-mysocial-protocol-config = { path = "../mysocial-protocol-config" }\
+mysocial-protocol-config = { workspace = true }\
 ' "${CRATE_PATH}/Cargo.toml"
             # Add comment to existing sui-protocol-config
             sed -i '' '/sui-protocol-config/s/$/  # Keep for backward compatibility/' "${CRATE_PATH}/Cargo.toml"
         fi
     fi
     
-    # Add mysocial-core with direct path reference
+    # Add mysocial-core with workspace reference
     if grep -q "sui-core" "${CRATE_PATH}/Cargo.toml"; then
         # Check if mysocial-core is already added
         if ! grep -q "mysocial-core" "${CRATE_PATH}/Cargo.toml"; then
             sed -i '' '/sui-core/i\
-mysocial-core = { path = "../mysocial-core" }\
+mysocial-core = { workspace = true }\
 ' "${CRATE_PATH}/Cargo.toml"
-            # Comment out sui-core to avoid conflicts
-            sed -i '' '/sui-core.workspace = true/s/^/# /' "${CRATE_PATH}/Cargo.toml"
             # Add comment to existing sui-core (if not commented out)
             sed -i '' '/sui-core/s/$/  # Keep for backward compatibility/' "${CRATE_PATH}/Cargo.toml"
         fi
     fi
     
-    # Add mysocial-config with direct path reference
+    # Add mysocial-config with workspace reference
     if grep -q "sui-config" "${CRATE_PATH}/Cargo.toml"; then
         # Check if mysocial-config is already added
         if ! grep -q "mysocial-config" "${CRATE_PATH}/Cargo.toml"; then
             sed -i '' '/sui-config/i\
-mysocial-config = { path = "../mysocial-config" }\
+mysocial-config = { workspace = true }\
 ' "${CRATE_PATH}/Cargo.toml"
             # Add comment to existing sui-config
             sed -i '' '/sui-config/s/$/  # Keep for backward compatibility/' "${CRATE_PATH}/Cargo.toml"
