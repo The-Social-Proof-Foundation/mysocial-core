@@ -7,10 +7,16 @@ YELLOW='\033[0;33m'
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
-# Extract counts from migration_report.txt
-FULLY_MIGRATED=$(grep -A 100 "FULLY MIGRATED CRATES" migration_report.txt | grep "^  - " | wc -l)
-PARTIALLY_MIGRATED=$(grep -A 100 "PARTIALLY MIGRATED CRATES" migration_report.txt | grep "^  - " | wc -l)
-NOT_MIGRATED=$(grep -A 200 "NOT MIGRATED CRATES" migration_report.txt | grep -c "^  - ")
+# Extract section headers to get proper line ranges
+FULLY_START=$(grep -n "FULLY MIGRATED CRATES" migration_report.txt | cut -d: -f1)
+PARTIALLY_START=$(grep -n "PARTIALLY MIGRATED CRATES" migration_report.txt | cut -d: -f1)
+NOT_START=$(grep -n "NOT MIGRATED CRATES" migration_report.txt | cut -d: -f1)
+CHALLENGES_START=$(grep -n "Migration Challenges:" migration_report.txt | cut -d: -f1)
+
+# Extract counts from migration_report.txt using proper line ranges
+FULLY_MIGRATED=$(sed -n "${FULLY_START},${PARTIALLY_START}p" migration_report.txt | grep "^  - " | wc -l)
+PARTIALLY_MIGRATED=$(sed -n "${PARTIALLY_START},${NOT_START}p" migration_report.txt | grep "^  - " | wc -l)
+NOT_MIGRATED=$(sed -n "${NOT_START},${CHALLENGES_START}p" migration_report.txt | grep "^  - " | wc -l)
 
 TOTAL=$((FULLY_MIGRATED + PARTIALLY_MIGRATED + NOT_MIGRATED))
 PERCENT_FULLY_MIGRATED=$(echo "scale=1; 100 * $FULLY_MIGRATED / $TOTAL" | bc)
