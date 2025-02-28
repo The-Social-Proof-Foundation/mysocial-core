@@ -6,9 +6,9 @@ use crate::tx_generator::TxGenerator;
 use move_core_types::identifier::Identifier;
 use std::collections::HashMap;
 use sui_test_transaction_builder::TestTransactionBuilder;
-use sui_types::base_types::{ObjectID, ObjectRef, SequenceNumber, SuiAddress};
-use sui_types::programmable_transaction_builder::ProgrammableTransactionBuilder;
-use sui_types::transaction::{CallArg, ObjectArg, Transaction, DEFAULT_VALIDATOR_GAS_PRICE};
+use mysocial_types::base_types::{ObjectID, ObjectRef, SequenceNumber, SuiAddress};
+use mysocial_types::programmable_transaction_builder::ProgrammableTransactionBuilder;
+use mysocial_types::transaction::{CallArg, ObjectArg, Transaction, DEFAULT_VALIDATOR_GAS_PRICE};
 
 pub struct MoveTxGenerator {
     move_package: ObjectID,

@@ -7,7 +7,7 @@
 use std::sync::Arc;
 
 use proptest::prelude::*;
-use sui_types::{
+use mysocial_types::{
     base_types::{ObjectID, SuiAddress},
     crypto::{get_key_pair, AccountKeyPair},
     object::Object,

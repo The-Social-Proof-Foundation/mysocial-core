@@ -6,14 +6,14 @@ use move_core_types::{account_address::AccountAddress, identifier::Identifier};
 use proptest::arbitrary::*;
 use proptest::prelude::*;
 
-use sui_core::test_utils::send_and_confirm_transaction;
-use sui_types::base_types::ObjectID;
-use sui_types::effects::{TransactionEffects, TransactionEffectsAPI};
-use sui_types::error::SuiError;
-use sui_types::programmable_transaction_builder::ProgrammableTransactionBuilder;
-use sui_types::transaction::{ProgrammableTransaction, TransactionData, TransactionKind};
-use sui_types::utils::to_sender_signed_transaction;
-use sui_types::{TypeTag, SUI_FRAMEWORK_PACKAGE_ID};
+use mysocial_core::test_utils::send_and_confirm_transaction;
+use mysocial_types::base_types::ObjectID;
+use mysocial_types::effects::{TransactionEffects, TransactionEffectsAPI};
+use mysocial_types::error::SuiError;
+use mysocial_types::programmable_transaction_builder::ProgrammableTransactionBuilder;
+use mysocial_types::transaction::{ProgrammableTransaction, TransactionData, TransactionKind};
+use mysocial_types::utils::to_sender_signed_transaction;
+use mysocial_types::{TypeTag, SUI_FRAMEWORK_PACKAGE_ID};
 
 use crate::account_universe::AccountCurrent;
 use crate::executor::{assert_is_acceptable_result, Executor};

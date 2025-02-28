@@ -19,9 +19,12 @@ tokio = { workspace = true, features = ["full"] }
 tracing.workspace = true
 
 once_cell.workspace = true
-sui-core.workspace = true
-sui-protocol-config.workspace = true
-sui-types = { workspace = true, features = ["fuzzing"] }
+mysocial-core = { workspace = true, package = "sui-core" }  # Migrated
+sui-core.workspace = true  # Keep for backward compatibility
+mysocial-protocol-config = { workspace = true, package = "sui-protocol-config" }  # Migrated
+sui-protocol-config.workspace = true  # Keep for backward compatibility
+mysocial-types = { workspace = true, package = "sui-types", features = ["fuzzing"] }  # Migrated
+sui-types = { workspace = true, features = ["fuzzing"] }  # Keep for backward compatibility
 sui-move-build.workspace = true
 
 

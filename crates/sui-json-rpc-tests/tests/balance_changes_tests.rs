@@ -4,8 +4,8 @@
 use std::path::PathBuf;
 use sui_move_build::{BuildConfig, SuiPackageHooks};
 use sui_sdk::SuiClient;
-use sui_types::programmable_transaction_builder::ProgrammableTransactionBuilder;
-use sui_types::transaction::{TransactionData, TransactionKind};
+use mysocial_types::programmable_transaction_builder::ProgrammableTransactionBuilder;
+use mysocial_types::transaction::{TransactionData, TransactionKind};
 use test_cluster::TestClusterBuilder;
 
 #[tokio::test]

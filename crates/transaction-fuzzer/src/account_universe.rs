@@ -8,7 +8,7 @@ use crate::executor::{ExecutionResult, Executor};
 use once_cell::sync::Lazy;
 use proptest::{prelude::*, strategy::Union};
 use std::{fmt, sync::Arc};
-use sui_types::{storage::ObjectStore, transaction::Transaction};
+use mysocial_types::{storage::ObjectStore, transaction::Transaction};
 
 mod account;
 mod helpers;

@@ -6,16 +6,16 @@
 
 use std::{fmt::Debug, path::PathBuf, sync::Arc};
 
-use sui_core::authority::test_authority_builder::TestAuthorityBuilder;
-use sui_core::{authority::AuthorityState, test_utils::send_and_confirm_transaction};
+use mysocial_core::authority::test_authority_builder::TestAuthorityBuilder;
+use mysocial_core::{authority::AuthorityState, test_utils::send_and_confirm_transaction};
 use sui_move_build::BuildConfig;
-use sui_types::base_types::ObjectID;
-use sui_types::effects::{TransactionEffects, TransactionEffectsAPI};
-use sui_types::error::SuiError;
-use sui_types::execution_status::{ExecutionFailureStatus, ExecutionStatus};
-use sui_types::object::Object;
-use sui_types::transaction::{Transaction, TransactionData};
-use sui_types::utils::to_sender_signed_transaction;
+use mysocial_types::base_types::ObjectID;
+use mysocial_types::effects::{TransactionEffects, TransactionEffectsAPI};
+use mysocial_types::error::SuiError;
+use mysocial_types::execution_status::{ExecutionFailureStatus, ExecutionStatus};
+use mysocial_types::object::Object;
+use mysocial_types::transaction::{Transaction, TransactionData};
+use mysocial_types::utils::to_sender_signed_transaction;
 use tokio::runtime::Runtime;
 
 use crate::account_universe::{AccountCurrent, PUBLISH_BUDGET};

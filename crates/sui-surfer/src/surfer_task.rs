@@ -4,8 +4,8 @@
 use std::{collections::HashMap, sync::Arc};
 
 use rand::{rngs::StdRng, Rng, SeedableRng};
-use sui_core::authority::authority_store_tables::LiveObject;
-use sui_types::{
+use mysocial_core::authority::authority_store_tables::LiveObject;
+use mysocial_types::{
     base_types::{ObjectRef, SuiAddress},
     object::Owner,
 };

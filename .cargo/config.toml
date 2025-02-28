@@ -11,6 +11,8 @@ xclippy = [
 ]
 xlint = "run --package x --bin x -- lint"
 xtest = "run --package x --bin x -- external-crates-tests"
+# Custom command to check syntax without code generation (for migration verification)
+check-syntax = "rustc --color auto --crate-name check_syntax -Zno-codegen --crate-type bin"
 
 # Configuration specifically for running clippy on `external-crates/move/`.
 # Some of these allows are to avoid code churn; others are filed as issues on the `sui` repo now.

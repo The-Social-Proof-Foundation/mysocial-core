@@ -7,10 +7,10 @@ use move_core_types::identifier::Identifier;
 use once_cell::sync::Lazy;
 use proptest::collection::vec;
 use proptest::prelude::*;
-use sui_protocol_config::ProtocolConfig;
-use sui_types::base_types::{ObjectID, ObjectRef, SuiAddress};
-use sui_types::programmable_transaction_builder::ProgrammableTransactionBuilder;
-use sui_types::transaction::{Argument, CallArg, Command, ProgrammableTransaction};
+use mysocial_protocol_config::ProtocolConfig;
+use mysocial_types::base_types::{ObjectID, ObjectRef, SuiAddress};
+use mysocial_types::programmable_transaction_builder::ProgrammableTransactionBuilder;
+use mysocial_types::transaction::{Argument, CallArg, Command, ProgrammableTransaction};
 
 static PROTOCOL_CONFIG: Lazy<ProtocolConfig> =
     Lazy::new(ProtocolConfig::get_for_max_version_UNSAFE);

@@ -13,10 +13,10 @@ use once_cell::sync::Lazy;
 use proptest::prelude::*;
 use proptest_derive::Arbitrary;
 use std::sync::Arc;
-use sui_protocol_config::ProtocolConfig;
-use sui_types::base_types::ObjectRef;
-use sui_types::execution_status::{ExecutionFailureStatus, ExecutionStatus};
-use sui_types::{
+use mysocial_protocol_config::ProtocolConfig;
+use mysocial_types::base_types::ObjectRef;
+use mysocial_types::execution_status::{ExecutionFailureStatus, ExecutionStatus};
+use mysocial_types::{
     base_types::SuiAddress,
     error::{SuiError, UserInputError},
     object::Object,

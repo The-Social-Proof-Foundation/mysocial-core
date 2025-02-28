@@ -4,9 +4,9 @@
 use futures::stream::FuturesUnordered;
 use std::collections::BTreeMap;
 use std::sync::Arc;
-use sui_types::base_types::{ObjectRef, SuiAddress};
-use sui_types::crypto::{get_account_key_pair, AccountKeyPair};
-use sui_types::object::Object;
+use mysocial_types::base_types::{ObjectRef, SuiAddress};
+use mysocial_types::crypto::{get_account_key_pair, AccountKeyPair};
+use mysocial_types::object::Object;
 
 #[derive(Clone)]
 pub struct Account {
