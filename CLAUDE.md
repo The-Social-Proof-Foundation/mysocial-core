@@ -250,13 +250,30 @@ During our rebranding effort, we've identified several challenges and developed 
 
 - **Approach**: For sui-single-node-benchmark, we've started the migration by adding mysocial dependencies and keeping the package in a partially migrated state until we can resolve these conflicts
 
+## Migration Progress Update
+
+We've made significant progress in our migration efforts, including:
+
+1. **Improved Migration Testing Infrastructure**:
+   - Created robust isolated testing scripts that handle package name conflicts
+   - Added version mapping for common dependencies (syn, proc-macro2, etc.)
+   - Implemented handling for workspace version references
+   - Added support for maintaining dual dependencies during transition
+
+2. **Successfully Migrated Crates**:
+   - **sui-authority-aggregation**: Successfully migrated to use mysocial-types
+   - **sui-analytics-indexer-derive**: Confirmed compatibility with migration approach
+   - **sui-adapter-transactional-tests**: Updated to use both old and new dependency imports
+   - **sui-single-node-benchmark**: Updated to use mysocial-core for benchmarking
+   - **sui-transaction-checks**: Updated to use mysocial-types and protocol-config
+   - **sui-swarm-config**: Completed medium complexity crate with network dependencies
+
 ## Next Steps
 1. Continue renaming remaining high-priority modules:
+   - **sui-analytics-indexer**: Update to use mysocial-types for analytics data processing
+   - **sui-archival**: Update to use mysocial-core and mysocial-types for archival functionality
    - **sui-json-rpc-tests**: Update to use mysocial-core and mysocial-types for testing infrastructure
-   - **sui-indexer-alt-restorer**: Update to use mysocial-core and its LiveObject alias
-   - **sui-surfer**: Update to use mysocial-core for core functionality
-   - **transaction-fuzzer**: Update to use mysocial-core and mysocial-types for fuzzing implementation
-   - **sui-single-node-benchmark**: Update to use mysocial-core for benchmarking infrastructure
+   - **sui-transactional-test-runner**: Fully migrate to use mysocial-core and types
 2. Expand the alias.rs module to include additional types for components like:
    - Fuzzing utilities
    - Authority verification components
