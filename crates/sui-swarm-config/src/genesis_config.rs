@@ -7,16 +7,16 @@ use anyhow::Result;
 use fastcrypto::traits::KeyPair;
 use rand::{rngs::StdRng, SeedableRng};
 use serde::{Deserialize, Serialize};
-use sui_config::genesis::{GenesisCeremonyParameters, TokenAllocation};
-use sui_config::node::{DEFAULT_COMMISSION_RATE, DEFAULT_VALIDATOR_GAS_PRICE};
-use sui_config::{local_ip_utils, Config};
+use mysocial_config::genesis::{GenesisCeremonyParameters, TokenAllocation};
+use mysocial_config::node::{DEFAULT_COMMISSION_RATE, DEFAULT_VALIDATOR_GAS_PRICE};
+use mysocial_config::{local_ip_utils, Config};
 use sui_genesis_builder::validator_info::{GenesisValidatorInfo, ValidatorInfo};
-use sui_types::base_types::SuiAddress;
-use sui_types::crypto::{
+use mysocial_types::base_types::SuiAddress;
+use mysocial_types::crypto::{
     generate_proof_of_possession, get_key_pair_from_rng, AccountKeyPair, AuthorityKeyPair,
     AuthorityPublicKeyBytes, NetworkKeyPair, NetworkPublicKey, PublicKey, SuiKeyPair,
 };
-use sui_types::multiaddr::Multiaddr;
+use mysocial_types::multiaddr::Multiaddr;
 use tracing::info;
 
 // All information needed to build a NodeConfig for a state sync fullnode.

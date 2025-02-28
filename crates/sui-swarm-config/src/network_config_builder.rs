@@ -6,16 +6,16 @@ use std::time::Duration;
 use std::{num::NonZeroUsize, path::Path, sync::Arc};
 
 use rand::rngs::OsRng;
-use sui_config::genesis::{TokenAllocation, TokenDistributionScheduleBuilder};
-use sui_config::node::AuthorityOverloadConfig;
-use sui_config::ExecutionCacheConfig;
+use mysocial_config::genesis::{TokenAllocation, TokenDistributionScheduleBuilder};
+use mysocial_config::node::AuthorityOverloadConfig;
+use mysocial_config::ExecutionCacheConfig;
 use sui_macros::nondeterministic;
-use sui_types::base_types::{AuthorityName, SuiAddress};
-use sui_types::committee::{Committee, ProtocolVersion};
-use sui_types::crypto::{get_key_pair_from_rng, AccountKeyPair, KeypairTraits, PublicKey};
-use sui_types::object::Object;
-use sui_types::supported_protocol_versions::SupportedProtocolVersions;
-use sui_types::traffic_control::{PolicyConfig, RemoteFirewallConfig};
+use mysocial_types::base_types::{AuthorityName, SuiAddress};
+use mysocial_types::committee::{Committee, ProtocolVersion};
+use mysocial_types::crypto::{get_key_pair_from_rng, AccountKeyPair, KeypairTraits, PublicKey};
+use mysocial_types::object::Object;
+use mysocial_types::supported_protocol_versions::SupportedProtocolVersions;
+use mysocial_types::traffic_control::{PolicyConfig, RemoteFirewallConfig};
 
 use crate::genesis_config::{AccountConfig, ValidatorGenesisConfigBuilder, DEFAULT_GAS_AMOUNT};
 use crate::genesis_config::{GenesisConfig, ValidatorGenesisConfig};
@@ -504,7 +504,7 @@ impl<R: rand::RngCore + rand::CryptoRng> ConfigBuilder<R> {
 
 #[cfg(test)]
 mod tests {
-    use sui_config::node::Genesis;
+    use mysocial_config::node::Genesis;
 
     #[test]
     fn serialize_genesis_config_in_place() {
@@ -554,14 +554,14 @@ mod tests {
 mod test {
     use std::collections::HashSet;
     use std::sync::Arc;
-    use sui_config::genesis::Genesis;
-    use sui_protocol_config::{Chain, ProtocolConfig, ProtocolVersion};
-    use sui_types::epoch_data::EpochData;
-    use sui_types::gas::SuiGasStatus;
-    use sui_types::in_memory_storage::InMemoryStorage;
-    use sui_types::metrics::LimitsMetrics;
-    use sui_types::sui_system_state::SuiSystemStateTrait;
-    use sui_types::transaction::CheckedInputObjects;
+    use mysocial_config::genesis::Genesis;
+    use mysocial_protocol_config::{Chain, ProtocolConfig, ProtocolVersion};
+    use mysocial_types::epoch_data::EpochData;
+    use mysocial_types::gas::SuiGasStatus;
+    use mysocial_types::in_memory_storage::InMemoryStorage;
+    use mysocial_types::metrics::LimitsMetrics;
+    use mysocial_types::sui_system_state::SuiSystemStateTrait;
+    use mysocial_types::transaction::CheckedInputObjects;
 
     #[test]
     fn roundtrip() {

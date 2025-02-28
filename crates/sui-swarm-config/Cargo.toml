@@ -24,10 +24,13 @@ prometheus.workspace = true
 
 move-bytecode-utils.workspace = true
 shared-crypto.workspace = true
-sui-config.workspace = true
+mysocial-config = { path = "../mysocial-config" }
+sui-config.workspace = true  # Keep for backward compatibility
 sui-macros.workspace = true
-sui-protocol-config.workspace = true
-sui-types.workspace = true
+mysocial-protocol-config = { path = "../mysocial-protocol-config" }
+sui-protocol-config.workspace = true  # Keep for backward compatibility
+mysocial-types = { path = "../mysocial-types" }
+sui-types.workspace = true  # Keep for backward compatibility
 sui-genesis-builder.workspace = true
 sui-rpc-api.workspace = true
 

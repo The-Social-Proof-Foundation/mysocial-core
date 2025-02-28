@@ -7,7 +7,7 @@ use std::time::Duration;
 
 use fastcrypto::encoding::{Encoding, Hex};
 use fastcrypto::traits::KeyPair;
-use sui_config::node::{
+use mysocial_config::node::{
     default_enable_index_processing, default_end_of_epoch_broadcast_channel_capacity,
     default_local_execution_time_cache_size, default_local_execution_time_channel_capacity,
     AuthorityKeyPairWithPath, AuthorityOverloadConfig, AuthorityStorePruningConfig,
@@ -15,17 +15,17 @@ use sui_config::node::{
     Genesis, KeyPairWithPath, StateArchiveConfig, StateSnapshotConfig,
     DEFAULT_GRPC_CONCURRENCY_LIMIT,
 };
-use sui_config::node::{default_zklogin_oauth_providers, RunWithRange};
-use sui_config::p2p::{P2pConfig, SeedPeer, StateSyncConfig};
-use sui_config::verifier_signing_config::VerifierSigningConfig;
-use sui_config::{
+use mysocial_config::node::{default_zklogin_oauth_providers, RunWithRange};
+use mysocial_config::p2p::{P2pConfig, SeedPeer, StateSyncConfig};
+use mysocial_config::verifier_signing_config::VerifierSigningConfig;
+use mysocial_config::{
     local_ip_utils, ConsensusConfig, NodeConfig, AUTHORITIES_DB_NAME, CONSENSUS_DB_NAME,
     FULL_NODE_DB_PATH,
 };
-use sui_types::crypto::{AuthorityKeyPair, AuthorityPublicKeyBytes, NetworkKeyPair, SuiKeyPair};
-use sui_types::multiaddr::Multiaddr;
-use sui_types::supported_protocol_versions::SupportedProtocolVersions;
-use sui_types::traffic_control::{PolicyConfig, RemoteFirewallConfig};
+use mysocial_types::crypto::{AuthorityKeyPair, AuthorityPublicKeyBytes, NetworkKeyPair, SuiKeyPair};
+use mysocial_types::multiaddr::Multiaddr;
+use mysocial_types::supported_protocol_versions::SupportedProtocolVersions;
+use mysocial_types::traffic_control::{PolicyConfig, RemoteFirewallConfig};
 
 use crate::genesis_config::{ValidatorGenesisConfig, ValidatorGenesisConfigBuilder};
 use crate::network_config::NetworkConfig;

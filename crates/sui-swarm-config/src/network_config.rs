@@ -3,10 +3,10 @@
 
 use serde::{Deserialize, Serialize};
 use serde_with::serde_as;
-use sui_config::{genesis, Config, NodeConfig};
-use sui_types::committee::CommitteeWithNetworkMetadata;
-use sui_types::crypto::AccountKeyPair;
-use sui_types::multiaddr::Multiaddr;
+use mysocial_config::{genesis, Config, NodeConfig};
+use mysocial_types::committee::CommitteeWithNetworkMetadata;
+use mysocial_types::crypto::AccountKeyPair;
+use mysocial_types::multiaddr::Multiaddr;
 
 /// This is a config that is used for testing or local use as it contains the config and keys for
 /// all validators

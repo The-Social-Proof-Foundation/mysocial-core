@@ -4,7 +4,7 @@
 use crate::network_config::NetworkConfig;
 use shared_crypto::intent::{Intent, IntentMessage, IntentScope};
 use std::collections::HashMap;
-use sui_types::{
+use mysocial_types::{
     base_types::AuthorityName,
     committee::{Committee, EpochId, StakeUnit},
     crypto::{
