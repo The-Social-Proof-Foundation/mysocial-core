@@ -8,8 +8,8 @@ use mysten_metrics::monitored_future;
 use std::collections::{BTreeMap, BTreeSet};
 use std::sync::Arc;
 use std::time::{Duration, Instant};
-use sui_types::base_types::ConciseableName;
-use sui_types::committee::{CommitteeTrait, StakeUnit};
+use mysocial_types::base_types::ConciseableName;
+use mysocial_types::committee::{CommitteeTrait, StakeUnit};
 
 use tokio::time::timeout;
 
