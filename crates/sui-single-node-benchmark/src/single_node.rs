@@ -5,28 +5,28 @@ use crate::command::Component;
 use crate::mock_storage::InMemoryObjectStore;
 use std::collections::{BTreeMap, HashMap, HashSet};
 use std::sync::Arc;
-use sui_core::authority::authority_per_epoch_store::AuthorityPerEpochStore;
-use sui_core::authority::authority_store_tables::LiveObject;
-use sui_core::authority::test_authority_builder::TestAuthorityBuilder;
-use sui_core::authority::AuthorityState;
-use sui_core::authority_server::{ValidatorService, ValidatorServiceMetrics};
-use sui_core::checkpoints::checkpoint_executor::CheckpointExecutor;
-use sui_core::consensus_adapter::{
+use mysocial_core::authority::authority_per_epoch_store::AuthorityPerEpochStore;
+use mysocial_core::authority::authority_store_tables::LiveObject;
+use mysocial_core::authority::test_authority_builder::TestAuthorityBuilder;
+use mysocial_core::authority::AuthorityState;
+use mysocial_core::authority_server::{ValidatorService, ValidatorServiceMetrics};
+use mysocial_core::checkpoints::checkpoint_executor::CheckpointExecutor;
+use mysocial_core::consensus_adapter::{
     ConnectionMonitorStatusForTests, ConsensusAdapter, ConsensusAdapterMetrics,
 };
-use sui_core::mock_consensus::{ConsensusMode, MockConsensusClient};
-use sui_core::state_accumulator::StateAccumulator;
+use mysocial_core::mock_consensus::{ConsensusMode, MockConsensusClient};
+use mysocial_core::state_accumulator::StateAccumulator;
 use sui_test_transaction_builder::{PublishData, TestTransactionBuilder};
-use sui_types::base_types::{AuthorityName, ObjectRef, SuiAddress, TransactionDigest};
-use sui_types::committee::Committee;
-use sui_types::crypto::{AccountKeyPair, AuthoritySignature, Signer};
-use sui_types::effects::{TransactionEffects, TransactionEffectsAPI};
-use sui_types::executable_transaction::VerifiedExecutableTransaction;
-use sui_types::messages_checkpoint::{VerifiedCheckpoint, VerifiedCheckpointContents};
-use sui_types::messages_grpc::HandleTransactionResponse;
-use sui_types::mock_checkpoint_builder::{MockCheckpointBuilder, ValidatorKeypairProvider};
-use sui_types::object::Object;
-use sui_types::transaction::{
+use mysocial_types::base_types::{AuthorityName, ObjectRef, SuiAddress, TransactionDigest};
+use mysocial_types::committee::Committee;
+use mysocial_types::crypto::{AccountKeyPair, AuthoritySignature, Signer};
+use mysocial_types::effects::{TransactionEffects, TransactionEffectsAPI};
+use mysocial_types::executable_transaction::VerifiedExecutableTransaction;
+use mysocial_types::messages_checkpoint::{VerifiedCheckpoint, VerifiedCheckpointContents};
+use mysocial_types::messages_grpc::HandleTransactionResponse;
+use mysocial_types::mock_checkpoint_builder::{MockCheckpointBuilder, ValidatorKeypairProvider};
+use mysocial_types::object::Object;
+use mysocial_types::transaction::{
     CertifiedTransaction, Transaction, TransactionDataAPI, VerifiedCertificate,
     VerifiedTransaction, DEFAULT_VALIDATOR_GAS_PRICE,
 };
