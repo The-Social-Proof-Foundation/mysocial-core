@@ -20,15 +20,15 @@ use std::path::{Path, PathBuf};
 use std::sync::Arc;
 use std::thread::sleep;
 use std::time::Duration;
-use sui_config::object_storage_config::ObjectStoreConfig;
+use mysocial_config::object_storage_config::ObjectStoreConfig;
 use sui_storage::blob::{Blob, BlobEncoding};
 use sui_storage::object_store::util::{copy_file, path_to_filesystem};
 use sui_storage::{compress, FileCompression, StorageFormat};
-use sui_types::messages_checkpoint::{
+use mysocial_types::messages_checkpoint::{
     CertifiedCheckpointSummary as Checkpoint, CheckpointSequenceNumber,
     FullCheckpointContents as CheckpointContents,
 };
-use sui_types::storage::WriteStore;
+use mysocial_types::storage::WriteStore;
 use tokio::sync::mpsc;
 use tokio::sync::mpsc::{Receiver, Sender};
 use tokio::time::Instant;
