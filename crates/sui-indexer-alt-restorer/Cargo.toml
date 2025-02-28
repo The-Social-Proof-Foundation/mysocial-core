@@ -20,14 +20,16 @@ object_store.workspace = true
 prometheus.workspace = true
 sui-archival.workspace = true
 sui-config.workspace = true
-sui-core.workspace = true
+mysocial-core.workspace = true
+sui-core.workspace = true # Keep for backward compatibility
 sui-field-count.workspace = true
 sui-indexer-alt-schema.workspace = true
 sui-indexer-alt-framework.workspace = true
 sui-pg-db.workspace = true
 sui-snapshot.workspace = true
 sui-storage.workspace = true
-sui-types.workspace = true
+mysocial-types.workspace = true
+sui-types.workspace = true # Keep for backward compatibility
 tokio = { workspace = true, features = ["full"] }
 telemetry-subscribers.workspace = true
 

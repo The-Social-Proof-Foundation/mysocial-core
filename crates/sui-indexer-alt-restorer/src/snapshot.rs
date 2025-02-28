@@ -14,7 +14,7 @@ use tokio::sync::Mutex;
 use tracing::{debug, info};
 
 use sui_config::object_storage_config::{ObjectStoreConfig, ObjectStoreType};
-use sui_core::authority::authority_store_tables::LiveObject;
+use mysocial_core::alias::LiveObject; // Updated to use mysocial-core via alias
 use sui_field_count::FieldCount;
 use sui_indexer_alt_framework::task::TrySpawnStreamExt;
 use sui_indexer_alt_schema::objects::StoredObjInfo;
