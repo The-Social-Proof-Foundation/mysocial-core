@@ -1,8 +1,10 @@
 ===== MYSOCIAL MIGRATION STATUS =====
 
-FULLY MIGRATED CRATES (18):
+FULLY MIGRATED CRATES (22):
+  - mysocial-config
   - mysocial-core
   - mysocial-indexer
+  - mysocial-json
   - mysocial-protocol-config
   - mysocial-types
   - sui-cluster-test
@@ -12,15 +14,17 @@ FULLY MIGRATED CRATES (18):
   - sui-json-rpc-types
   - sui-keys
   - sui-move
+  - sui-protocol-config
   - sui-replay
   - sui-sdk
   - sui-simulator
-  - sui-single-node-benchmark
   - sui-storage
+  - sui-surfer
   - sui-telemetry
   - test-cluster
+  - transaction-fuzzer
 
-PARTIALLY MIGRATED CRATES (13):
+PARTIALLY MIGRATED CRATES (12):
   - sui
   - sui-benchmark
   - sui-core
@@ -28,14 +32,13 @@ PARTIALLY MIGRATED CRATES (13):
   - sui-json-rpc
   - sui-json-rpc-tests
   - sui-node
+  - sui-single-node-benchmark
   - sui-snapshot
-  - sui-surfer
   - sui-tool
   - sui-transactional-test-runner
-  - transaction-fuzzer
   - x
 
-NOT MIGRATED CRATES (94):
+NOT MIGRATED CRATES (92):
   - anemo-benchmark
   - bin-version
   - mysocial-protocol-config-macros
@@ -91,7 +94,6 @@ NOT MIGRATED CRATES (94):
   - sui-move-build
   - sui-move-lsp
   - sui-mvr-graphql-e2e-tests
-  - sui-mvr-graphql-rpc
   - sui-name-service
   - sui-network
   - sui-open-rpc
@@ -102,7 +104,6 @@ NOT MIGRATED CRATES (94):
   - sui-package-resolver
   - sui-pg-db
   - sui-proc-macros
-  - sui-protocol-config
   - sui-protocol-config-macros
   - sui-proxy
   - sui-rosetta
@@ -131,7 +132,14 @@ NOT MIGRATED CRATES (94):
   - typed-store-error
   - typed-store-workspace-hack
 
+Migration Challenges:
+- Package naming conflicts: Both mysocial-core and sui-core have the package name "sui-core" in Cargo.toml
+- This makes it difficult to have both packages in the workspace and use them together
+- For sui-single-node-benchmark, we've started the migration by adding mysocial dependencies, 
+  but can't fully migrate due to package name conflicts
+
 Next steps:
 1. Complete migration of partially migrated crates
 2. Focus on high-priority non-migrated crates
-3. Consider symlinks in crates/migrated/ for better organization
+3. Resolve package naming conflicts (options: use dynamic package selection with features, modify package names)
+4. Consider symlinks in crates/migrated/ for better organization

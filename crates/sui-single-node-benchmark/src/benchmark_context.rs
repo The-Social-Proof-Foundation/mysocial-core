@@ -13,7 +13,7 @@ use futures::StreamExt;
 use std::collections::{BTreeMap, HashMap};
 use std::ops::Deref;
 use std::sync::Arc;
-use sui_config::node::RunWithRange;
+use mysocial_config::node::RunWithRange;
 use sui_test_transaction_builder::PublishData;
 use mysocial_types::base_types::{ObjectID, ObjectRef, SequenceNumber, SuiAddress};
 use mysocial_types::effects::{TransactionEffects, TransactionEffectsAPI};

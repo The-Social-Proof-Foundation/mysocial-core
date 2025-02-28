@@ -189,6 +189,44 @@ During our rebranding effort, we've identified several challenges and developed 
 - **Solution**: Consider versioned modules or clear upgrade paths
 - **Approach**: Provide migration guides for external consumers
 
+### Challenge: Package Name Conflicts
+- **Problem**: Both mysocial-core and sui-core have the package name "sui-core" in Cargo.toml, causing conflicts in workspace
+- **Solutions**:
+  1. **Feature Flags**: Use feature flags to conditionally select dependencies
+     ```toml
+     [features]
+     use-mysocial = []
+     
+     [dependencies]
+     mysocial-core = { path = "../mysocial-core", optional = true }
+     sui-core = { path = "../sui-core", optional = true }
+     
+     [dependencies.core]
+     path = "../mysocial-core"
+     package = "sui-core"
+     features = ["use-mysocial"]
+     ```
+  
+  2. **Phased Migration**: Temporarily exclude one of the packages from workspace during migration
+  
+  3. **Wrapper Packages**: Create wrapper crates that re-export functionality from both packages
+     ```rust
+     // In wrapper crate
+     #[cfg(feature = "use-mysocial")]
+     pub use mysocial_core::*;
+     
+     #[cfg(not(feature = "use-mysocial"))]
+     pub use sui_core::*;
+     ```
+  
+  4. **Direct Path References**: Use direct path references instead of workspace references
+     ```toml
+     mysocial-core = { path = "../mysocial-core" }
+     # Instead of mysocial-core.workspace = true
+     ```
+
+- **Approach**: For sui-single-node-benchmark, we've started the migration by adding mysocial dependencies and keeping the package in a partially migrated state until we can resolve these conflicts
+
 ## Next Steps
 1. Continue renaming remaining high-priority modules:
    - **sui-json-rpc-tests**: Update to use mysocial-core and mysocial-types for testing infrastructure

@@ -697,6 +697,7 @@ sui-rosetta = { path = "crates/sui-rosetta" }
 sui-rpc-loadgen = { path = "crates/sui-rpc-loadgen" }
 sui-sdk = { path = "crates/sui-sdk" }
 sui-simulator = { path = "crates/sui-simulator" }
+sui-single-node-benchmark = { path = "crates/sui-single-node-benchmark" }
 sui-snapshot = { path = "crates/sui-snapshot" }
 sui-source-validation = { path = "crates/sui-source-validation" }
 sui-source-validation-service = { path = "crates/sui-source-validation-service" }

@@ -53,7 +53,6 @@
     {"name": "sui-faucet", "dependencies": 3, "size":     4165, "status": "none"}
   ],
   "low_priority": [
-    {"name": "sui-protocol-config", "dependencies": 44, "size":     3722, "status": "none"},
     {"name": "sui-macros", "dependencies": 23, "size":      729, "status": "none"},
     {"name": "sui-pg-db", "dependencies": 12, "size":      665, "status": "none"},
     {"name": "sui-tls", "dependencies": 8, "size":      817, "status": "none"},
@@ -65,20 +64,22 @@
     {"name": "sui-sql-macro", "dependencies": 3, "size":      565, "status": "none"},
     {"name": "sui-http", "dependencies": 3, "size":     1264, "status": "none"},
     {"name": "sui-graphql-rpc-headers", "dependencies": 3, "size":        7, "status": "none"},
-    {"name": "sui-protocol-config-macros", "dependencies": 2, "size":      360, "status": "none"},
     {"name": "sui-proc-macros", "dependencies": 2, "size":      585, "status": "none"},
     {"name": "sui-package-dump", "dependencies": 2, "size":      406, "status": "none"},
     {"name": "sui-indexer-alt-jsonrpc", "dependencies": 2, "size":     5628, "status": "none"},
     {"name": "sui-graphql-rpc-client", "dependencies": 2, "size":      343, "status": "none"},
     {"name": "sui-field-count-derive", "dependencies": 2, "size":       27, "status": "none"},
     {"name": "sui-analytics-indexer", "dependencies": 2, "size":     3903, "status": "none"},
-    {"name": "sui-analytics-indexer-derive", "dependencies": 2, "size":       52, "status": "none"}
+    {"name": "sui-analytics-indexer-derive", "dependencies": 2, "size":       52, "status": "none"},
+    {"name": "sui-verifier-transactional-tests", "dependencies": 1, "size":       13, "status": "none"},
+    {"name": "sui-upgrade-compatibility-transactional-tests", "dependencies": 1, "size":      126, "status": "none"}
   ],
   "migrated": [
     "sui-json-rpc-tests",
     "sui-indexer-alt-restorer",
     "sui-single-node-benchmark",
     "sui-surfer",
-    "transaction-fuzzer"
+    "transaction-fuzzer",
+    "sui-protocol-config"
   ]
 }

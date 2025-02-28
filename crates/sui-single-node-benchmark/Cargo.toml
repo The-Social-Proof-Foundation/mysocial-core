@@ -11,9 +11,10 @@ move-bytecode-utils.workspace = true
 move-core-types.workspace = true
 move-package.workspace = true
 move-symbol-pool.workspace = true
-sui-config.workspace = true
-mysocial-core.workspace = true
-sui-core.workspace = true # Keep for backward compatibility
+mysocial-config = { path = "../mysocial-config" }
+sui-config.workspace = true # Keep for backward compatibility
+mysocial-core = { path = "../mysocial-core" }
+# sui-core.workspace = true # Commenting out to avoid package conflict
 sui-move-build.workspace = true
 sui-test-transaction-builder.workspace = true
 sui-transaction-checks.workspace = true
