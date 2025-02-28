@@ -1,4 +1,4 @@
-// Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation
 // SPDX-License-Identifier: Apache-2.0
 
 use async_trait::async_trait;
@@ -15,9 +15,9 @@ use std::collections::BTreeSet;
 use std::num::NonZeroUsize;
 use std::sync::{Arc, Mutex};
 use std::{borrow::Cow, collections::BTreeMap};
-use sui_types::base_types::is_primitive_type_tag;
-use sui_types::transaction::{Argument, CallArg, Command, ProgrammableTransaction};
-use sui_types::type_input::{StructInput, TypeInput};
+use mysocial_types::base_types::is_primitive_type_tag;
+use mysocial_types::transaction::{Argument, CallArg, Command, ProgrammableTransaction};
+use mysocial_types::type_input::{StructInput, TypeInput};
 
 use crate::error::Error;
 use move_binary_format::errors::Location;
@@ -33,9 +33,9 @@ use move_core_types::{
     annotated_value::{MoveFieldLayout, MoveStructLayout, MoveTypeLayout},
     language_storage::{StructTag, TypeTag},
 };
-use sui_types::move_package::{MovePackage, TypeOrigin};
-use sui_types::object::Object;
-use sui_types::{base_types::SequenceNumber, Identifier};
+use mysocial_types::move_package::{MovePackage, TypeOrigin};
+use mysocial_types::object::Object;
+use mysocial_types::{base_types::SequenceNumber, Identifier};
 
 pub mod error;
 

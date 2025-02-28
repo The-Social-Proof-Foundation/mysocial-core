@@ -1,11 +1,11 @@
-// Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation
 // SPDX-License-Identifier: Apache-2.0
 
 use std::sync::Arc;
 
 use move_binary_format::errors::VMError;
 use move_core_types::account_address::AccountAddress;
-use sui_types::TypeTag;
+use mysocial_types::TypeTag;
 use thiserror::Error;
 
 #[derive(Error, Debug, Clone)]
